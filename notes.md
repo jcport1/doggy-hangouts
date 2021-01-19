@@ -20,7 +20,8 @@ Listing
 - has_many :requests
 - has_many :user_requestors, through: :requests, source: :user_requestor_id
 - belongs_to :author, class_name: "User"
-- belongs_to :pet 
+- belongs_to :pet_solicitor, class_name: "Pet" 
+
 <!-- - has_many :listing_tags 
 - has_many :tags, through: :listing_tags  -->
 
