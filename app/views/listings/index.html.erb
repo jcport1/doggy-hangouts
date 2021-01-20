@@ -1,1 +1,8 @@
 <h1> Here are all the Listings </h1> 
+
+<% @listings.each do |l| %>
+    <%= l.title %>
+    <br>
+    <br> 
+    <%= l.message %>
+    <% end %>
