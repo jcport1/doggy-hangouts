@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+
+  #sets my homepage 
+  get '/' => 'sessions#welcome'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
   get '/signup' => 'users#new'
   resources :requests
   resources :listings
