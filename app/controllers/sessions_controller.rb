@@ -9,17 +9,19 @@ class SessionsController < ApplicationController
 
     end 
 
+    #logs in User 
+
     def create 
 
         #find the user with params from form
 
-        user = User.find_by(username: params[:username])
+        @user = User.find_by(username: params[:user][:username])
 
         #if user and password valid log them in 
 
-        if user && user.authenticate(params[:password])
-            session[:user_id] = user.id
-            redirect_to listings_path, :notice => "You're Logged in!"
+        if @user && @user.authenticate(params[:user][:password])
+            session[:user_id] = @user.id
+            redirect_to listings_path, notice: "Welcome back!"
         else 
             flash[:error] = "Your login info was invalid"
             render :new
@@ -30,7 +32,8 @@ class SessionsController < ApplicationController
 
     def destroy
 
-        session.delete[params[:user_id]]
+        session.delete(:user_id)
+        redirect_to '/', notice: "See you soon - woof! "
 
     end 
 
