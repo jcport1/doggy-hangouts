@@ -9,6 +9,6 @@ class PetsController < ApplicationController
     end
     
     def create 
-        
+
     end
 end
