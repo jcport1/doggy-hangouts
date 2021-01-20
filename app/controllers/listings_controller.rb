@@ -15,6 +15,8 @@ class ListingsController < ApplicationController
     def create
 
         @listing = Listing.create(listing_params)
+        @listing.author_id = session[:user_id]
+        #pet id? 
 
             if @listing.save
                 #redirect to a homepage or dashboard
