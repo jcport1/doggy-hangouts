@@ -1,0 +1,13 @@
+<h1> Update Your Listing </h1>
+
+<%= form_for(@listing) do |f| %>
+    <%= f.label :message %> 
+    <%= f.text_field :message %>
+    <br>
+    <br> 
+    <%= f.label :content %> 
+    <%= f.text_area :content %>
+    <br>
+    <br> 
+    <%= f.submit %>
+<% end %> 

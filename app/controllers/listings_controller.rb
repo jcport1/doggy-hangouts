@@ -43,6 +43,6 @@ class ListingsController < ApplicationController
     
     #belongs to author, pet
     def listing_params 
-        params.require(:listing).permits(:title, :content)
+        params.require(:listing).permit(:title, :content)
     end
 end

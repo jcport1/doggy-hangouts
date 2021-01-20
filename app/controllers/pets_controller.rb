@@ -30,7 +30,7 @@ class PetsController < ApplicationController
 
     private
 
-    #needs an owner 
+    #belongs to owner 
 
     def pet_params 
         params.require(:pet).permit(:name, :age, :size)
