@@ -25,10 +25,12 @@ class PetsController < ApplicationController
 
     def show
 
-        @pet = Pet.find_by[params:id]
+        @pet = Pet.find(params[:id])
     end
 
     private
+
+    #needs an owner 
 
     def pet_params 
         params.require(:pet).permit(:name, :age, :size)

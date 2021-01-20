@@ -1,0 +1,13 @@
+<h1> Send a Request </h1>
+
+<%= form_for(@request) do |f| %>
+    <%= f.label :message %>
+    <%= f.text_field :message %>
+    <br>
+    <br>
+    <%= f.label :date %>
+    <%= f.text_field :date %>
+    <br>
+    <br>
+   <%= f.submit %>
+   <% end %> 

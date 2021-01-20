@@ -10,7 +10,17 @@ class RequestsController < ApplicationController
 
     end
 
-    def create 
+    def create
+
+        @request = Request.create(request_params)
+
+        if @request.save
+
+            redirect_to "/listings"
+
+        else 
+            render :new 
+        end
 
     end
 
@@ -20,5 +30,13 @@ class RequestsController < ApplicationController
 
     def update
         
+    end
+
+    private 
+
+    #needs user, pet, listing 
+
+    def request_params 
+        params.require(:request).permits(:message, :date, :accept)
     end
 end
