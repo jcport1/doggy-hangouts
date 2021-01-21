@@ -12,9 +12,10 @@
 <i>pending approval </i>
 
     <ul> 
-    <% @user.authored_listings.requests.each do |r| %>
-        <li>Message: <%= r.message %> - Received on <%= r.created_at %></li>
+    <% @user.received_requests.each do |r| %>
+        <li>Message: <%= link_to r.message, request_path(r) %> - Received on <%= r.created_at %></li>
         <% end %> 
+    </ul>
 
 
 <h4>Requests Sent</h4> 
