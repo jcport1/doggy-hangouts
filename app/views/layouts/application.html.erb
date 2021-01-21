@@ -16,6 +16,7 @@
 
   <div>
 
+    <%= link_to "My Profile", user_path(current_user) %>
     <%= link_to "View All Listings", listings_path %>
     <%= link_to "Create New Listing", new_listing_path %>
     <%= link_to "Log Out", logout_path %>

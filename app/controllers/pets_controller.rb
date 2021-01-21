@@ -18,7 +18,7 @@ class PetsController < ApplicationController
         @pet.user_id = session[:user_id]
 
         if @pet.save
-            redirect_to pet_path(@pet)
+            redirect_to user_path(current_user)
         else
             render :new
         end

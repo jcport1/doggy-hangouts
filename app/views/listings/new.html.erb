@@ -9,5 +9,9 @@
     <%= f.text_area :content %>
     <br>
     <br> 
+    <%= f.label :pet_id %>
+    <%= f.select :pet_id, current_user.pets.collect { |p| [p.name, p.id] } %> 
+    <br>
+    <br> 
     <%= f.submit %>
 <% end %> 
