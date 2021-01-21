@@ -8,7 +8,13 @@
  </ul>
 
 <h4>Requests Received</h4>
-<i> pending approval </i>
+
+<i>pending approval </i>
+
+    <ul> 
+    <% @user.authored_listings.requests.each do |r| %>
+        <li>Message: <%= r.message %> - Received on <%= r.created_at %></li>
+        <% end %> 
 
 
 <h4>Requests Sent</h4> 
