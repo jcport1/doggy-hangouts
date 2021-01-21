@@ -3,7 +3,7 @@ class ListingsController < ApplicationController
     def index
 
         if params[:user_id] && @user = User.find_by_id(params[:user_id])
-            @user.listings 
+            @listings = @user.authored_listings 
         else 
             @error = "User not Found" if params[:user_id]
             @listings = Listing.all 
@@ -52,6 +52,6 @@ class ListingsController < ApplicationController
     
     #belongs to author, pet
     def listing_params 
-        params.require(:listing).permit(:title, :content, :pet_id)
+        params.require(:listing).permit(:title, :content, :pet_id, :user_id)
     end
 end

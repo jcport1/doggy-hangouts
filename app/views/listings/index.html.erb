@@ -1,5 +1,12 @@
+<% if @user %> 
+
+    <h1> Here are your Listings </h1>
+
+<% else %> 
 
 <h1> Here are all the Listings </h1> 
+
+<% end %> 
 
 <% @listings.each do |l| %>
     <%= l.title %>
@@ -14,3 +21,4 @@
     <br>
     <br>
     <% end %>
+  
