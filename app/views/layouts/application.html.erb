@@ -10,7 +10,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  #if logged in 
+  <body>
 
   <div>
 
@@ -20,7 +20,12 @@
 
   </div> 
 
-  <body>
+  <div> 
+    <%= flash[:notice] %>
+    <%= flash[:error] %>
+  </div> 
+
+
     <%= yield %>
   </body>
 </html>
