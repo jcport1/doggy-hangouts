@@ -14,6 +14,7 @@ class RequestsController < ApplicationController
 
         @request = Request.create(request_params)
         @request.user_id = session[:user_id]
+        @request.listing_id = 
 
         if @request.save
 
