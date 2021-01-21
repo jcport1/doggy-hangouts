@@ -11,6 +11,7 @@
     <br>
     <%= f.label :pet_id %>
     <%= f.select :pet_id, current_user.pets.collect {|p| [p.name, p.id]} %>
+    <%= f.hidden_field :listing_id %>
     <br>
     <br>
    <%= f.submit %>
