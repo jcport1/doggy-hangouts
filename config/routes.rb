@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :listings, only: [:index]
   end
   resources :listings do 
-    resources :requests, only: [:new, :create]
+    resources :requests, only: [:new, :create, :index]
   end
   resources :requests
   resources :pets
