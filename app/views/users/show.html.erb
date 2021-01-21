@@ -1,12 +1,23 @@
 <h1> Welcome, <%= @user.name %></h1>
 
-<p>My pet(s): 
+<h4>My pet(s):</h4> 
 <ul> 
 <% @user.pets.each do |p| %>
      <li><%= p.name %></li>
      <% end %>
  </ul>
 
-</p> 
+<h4>Requests Received</h4>
+<i> pending approval </i>
+
+
+<h4>Requests Sent</h4> 
+<ul> 
+
+<% @user.requests.each do |p| %>
+    <li>Message: <%= p.message %> - Sent on: <%= p.created_at %> </li>
+    <% end %>
+</ul> 
+
 
 <%= link_to "Add a Pet", new_pet_path %> 
