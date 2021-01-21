@@ -7,15 +7,36 @@
      <% end %>
  </ul>
 
+ <h3> Upcoming Doggy Hangouts </h3>
+
+ <% @user.received_requests.each do |r| %> 
+    <% if r.accept %> 
+        <p> Appointment with: </p> 
+        <ul>
+        <li>Owner: <%= r.user.name %></li>
+        <li>Dog Pal: <%= r.pet.name %></li>
+        <li>On: <%= r.date %></li>
+        </ul> 
+    <% else %>
+
+    <i>None at this time </i> 
+
+    <%end %> 
+
+<% end %> 
+
 <h4>Requests Received</h4>
 
 <i>pending approval </i>
 
     <ul> 
     <% @user.received_requests.each do |r| %>
-        <li>Message: <%= link_to r.message, request_path(r) %> - Received on <%= r.created_at %></li>
+        <% if r.accept.nil? %> 
+            <li>Message: <%= link_to r.message, request_path(r) %> - Received on <%= r.created_at %></li>
         <% end %> 
+    <% end %> 
     </ul>
+    <p>- None at this time</p>
 
 
 <h4>Requests Sent</h4> 
