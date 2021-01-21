@@ -39,6 +39,6 @@ class RequestsController < ApplicationController
     #belongs to user, pet, & listing 
 
     def request_params 
-        params.require(:request).permit(:message, :date, :accept)
+        params.require(:request).permit(:message, :date, :accept, :pet_id)
     end
 end
