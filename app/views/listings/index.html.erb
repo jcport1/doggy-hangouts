@@ -9,7 +9,7 @@
 <% end %> 
 
 <% @listings.each do |l| %>
-    <%= l.title %>
+    <h2><%= l.title %></h2>
     <br>
     <br> 
     <%= l.content %>
@@ -20,5 +20,9 @@
     <p><%= link_to "Make a Request", new_listing_request_path(l) %>
     <br>
     <br>
-    <% end %>
+    <% if @user %>
+        <%= link_to "Edit Listing", edit_listing_path(l) %> 
+     <% end %> 
+<% end %>
+
   
