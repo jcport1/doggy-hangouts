@@ -1,9 +1,14 @@
 class ApplicationController < ActionController::Base
 
+    #this macro makes it a requirement for user to be logged in before granted access
+
+    before_action :login_required 
+
+
     def login_required
 
         if !logged_in? 
-            redirect_to '/login', notice => "Login is required to see this page"
+            redirect_to '/login', :notice => "Login is required to see this page"
         end
 
     end
@@ -15,11 +20,14 @@ class ApplicationController < ActionController::Base
     end
 
     def current_user 
-        if sessions[:user_id]
-            @current_user = User.find_by(sessions[:user_id])
+        if session[:user_id]
+            @current_user = User.find(session[:user_id])
             @current_user 
         else 
             false 
         end
     end
+
+    helper_method :current_user 
+    
 end

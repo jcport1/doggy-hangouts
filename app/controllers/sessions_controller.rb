@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController
 
+    skip_before_action :login_required, only => [:welcome, :create]
+
     def welcome 
 
     end 
@@ -21,7 +23,7 @@ class SessionsController < ApplicationController
 
         if @user && @user.authenticate(params[:user][:password])
             session[:user_id] = @user.id
-            redirect_to listings_path, notice: "Welcome back!"
+            redirect_to listings_path, :notice => "Welcome back!"
         else 
             flash[:error] = "Your login info was invalid"
             render :new
