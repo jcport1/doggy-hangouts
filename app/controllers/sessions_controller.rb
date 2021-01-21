@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
 
-    skip_before_action :login_required, only => [:welcome, :create]
+    skip_before_action :login_required, :only => [:welcome, :create]
 
     def welcome 
 
