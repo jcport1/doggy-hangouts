@@ -10,5 +10,7 @@
     <br> 
     <p> Author: <%= link_to l.author.name, user_path(l.author) %></p>
     <p> Posted on: <%= l.created_at %></p>
-    <p><%= link_to "Make a Request", new_request_path %> 
+    <p><%= link_to "Make a Request", new_request_path %>
+    <br>
+    <br>
     <% end %>

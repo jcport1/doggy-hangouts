@@ -14,7 +14,6 @@ class RequestsController < ApplicationController
 
         @request = Request.create(request_params)
         @request.user_id = session[:user_id]
-        #pet?
 
         if @request.save
 
