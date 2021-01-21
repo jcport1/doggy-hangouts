@@ -2,7 +2,12 @@ class ListingsController < ApplicationController
 
     def index
 
-        @listings = Listing.all 
+        if params[:user_id] && @user = User.find_by_id(params[:user_id])
+            @user.listings 
+        else 
+            @error = "User not Found" if params[:user_id]
+            @listings = Listing.all 
+        end
 
     end
 
