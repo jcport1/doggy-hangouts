@@ -1,10 +1,21 @@
-<h1> Request from <%= @request.user_id.name %></h1> 
+<h1> Request from <%= @request.user.name %> </h1> 
 
-<%= @request.message %>
-<%= @request.content %>
+<p>Message: <%= @request.message %></p>
+<br>
+<br>
+<p>Date & Time Requested: <%= @request.date %></p>
+<br>
+<br>
 
-Do you want to approve this request?
+<h4> Do you want to approve this request? </h4>
 
-<h4> Do you want to approve this request? </h4> 
+<%= form_for(@request) do |f| %> 
+    <%= f.label 'accept', 'Accept' %> 
+    <%= f.radio_button :accept, true %>
+    <%= f.label 'accept', 'Decline' %> 
+    <%= f.radio_button :accept, false %>
+    <%= f.submit "Submit" %>
+<% end %> 
+
 
 
