@@ -23,11 +23,13 @@
     <ul> 
     <% @user.received_requests.each do |r| %>
         <% if r.accept.nil? %> 
-            <li>Message: <%= link_to r.message, request_path(r) %> - Received on <%= r.created_at %></li>
+            <li>From: <%= r.user.name %> - <%= link_to r.subject_line, request_path(r) %> - Received on <%= r.created_at %></li>
+        <% else %> 
+        <p>- None at this time</p>
         <% end %> 
     <% end %> 
     </ul>
-    <p>- None at this time</p>
+
 
 
 <h4>Requests Sent</h4> 

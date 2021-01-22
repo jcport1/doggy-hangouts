@@ -1,0 +1,20 @@
+<%= form_for(@request) do |f| %>
+    <%= f.label :subject_line %>
+    <%= f.text_field :subject_line %>
+    <br>
+    <br>
+    <%= f.label :message %>
+    <%= f.text_area :message %>
+    <br>
+    <br>
+    <%= f.label :date %>
+    <%= f.datetime_local_field :date %>
+    <br>
+    <br>
+    <%= f.label :pet_id %>
+    <%= f.select :pet_id, current_user.pets.collect {|p| [p.name, p.id]} %>
+    <%= f.hidden_field :listing_id %>
+    <br>
+    <br>
+   <%= f.submit %>
+   <% end %> 
