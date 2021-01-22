@@ -1,3 +1,5 @@
+<%= render partial: "layouts/errors", locals: {object: @pet} %>
+
 <%= form_for(@pet) do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
