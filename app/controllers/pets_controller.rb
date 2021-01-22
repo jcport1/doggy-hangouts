@@ -41,7 +41,7 @@ class PetsController < ApplicationController
 
     end
 
-    def delete 
+    def destroy  
 
         Pet.find(params[:id]).destroy 
         redirect_to user_path(current_user)
