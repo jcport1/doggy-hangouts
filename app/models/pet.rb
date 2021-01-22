@@ -5,5 +5,7 @@ class Pet < ApplicationRecord
     has_many :listings 
 
     validates :name, :age, :size, presence: true 
+
+    validates :size, inclusion: { in: %w(small medium large), message: "%{value} is not a valid size"}
     
 end
