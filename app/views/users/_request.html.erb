@@ -7,7 +7,7 @@
         <ul>
         <li>Owner: <%= r.user.name %></li>
         <li>Dog Pal: <%= r.pet.name %></li>
-        <li>On: <%= r.date.display_time_date %></li>
+        <li>Date & Time: <%= r.date.strftime("%b %e, %l:%M %p") %></li>
         </ul> 
     <% else %>
     <p> None at this time </p> 
@@ -21,7 +21,7 @@
     <ul> 
     <% @user.received_requests.each do |r| %>
         <% if r.accept.nil? %> 
-            <li>From: <%= r.user.name %> - <%= link_to r.subject_line, request_path(r) %> - Received on <%= r.created_at.display_time_date %></li>
+            <li>From: <%= r.user.name %> - <%= link_to r.subject_line, request_path(r) %> - Received on <%= r.created_at.strftime("%b %e, %l:%M %p")%></li>
         <% else %> 
         <p>- None at this time</p>
         <% end %> 
