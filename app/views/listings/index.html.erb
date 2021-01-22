@@ -9,7 +9,7 @@
 <% end %> 
 
 <% @listings.each do |l| %>
-    <h2><%= link_to l.title, listing_path(l) %></h2>
+    <h2><%= link_to l.title, listing_path(l) %></h2> Posted on: <%= l.created_at.display_time_date %>
      <% end %> 
 
 
