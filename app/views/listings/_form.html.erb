@@ -1,0 +1,15 @@
+<%= form_for(@listing) do |f| %>
+    <%= f.label :title %> 
+    <%= f.text_field :title %>
+    <br>
+    <br> 
+    <%= f.label :content %> 
+    <%= f.text_area :content %>
+    <br>
+    <br> 
+    <%= f.label :pet_id %>
+    <%= f.select :pet_id, current_user.pets.collect { |p| [p.name, p.id] } %> 
+    <br>
+    <br> 
+    <%= f.submit %>
+<% end %> 
