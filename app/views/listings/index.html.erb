@@ -9,20 +9,8 @@
 <% end %> 
 
 <% @listings.each do |l| %>
-    <h2><%= l.title %></h2>
-    <br>
-    <br> 
-    <%= l.content %>
-    <br> 
-    <br> 
-    <p> Author: <%= link_to l.author.name, user_path(l.author) %></p>
-    <p> Posted on: <%= l.created_at %></p>
-    <p><%= link_to "Make a Request", new_listing_request_path(l) %>
-    <br>
-    <br>
-    <% if @user %>
-        <%= link_to "Edit Listing", edit_listing_path(l) %> 
+    <h2><%= link_to l.title, listing_path(l) %></h2>
      <% end %> 
-<% end %>
+
 
   
