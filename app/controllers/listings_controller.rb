@@ -57,6 +57,13 @@ class ListingsController < ApplicationController
         
     end
 
+    def destroy
+
+        Listing.find(params[:id]).destroy
+        redirect_to listings_path 
+        
+    end
+
     private
     
     #belongs to author, pet

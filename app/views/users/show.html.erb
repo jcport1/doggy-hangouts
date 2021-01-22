@@ -3,7 +3,7 @@
 <h4>My pet(s):</h4> 
 <ul> 
 <% @user.pets.each do |p| %>
-     <li><%= p.name %></li>
+     <li><%= link_to p.name, pet_path(p) %></li>
      <% end %>
  </ul>
  <%= link_to "Add a Pet", new_pet_path %> 

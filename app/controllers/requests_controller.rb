@@ -57,6 +57,7 @@ class RequestsController < ApplicationController
         @request = Request.find_by_id(params[:id])
     end
 
+
     private 
 
     #belongs to user, pet, & listing 

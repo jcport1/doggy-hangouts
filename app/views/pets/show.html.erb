@@ -1,1 +1,12 @@
 <h1> Woof, Woof <%= @pet.name %> </h1> 
+
+<i> Add picture </i> 
+
+<p>Current Age: <%= @pet.age %></p>
+<p>Birthday: </p> 
+<p> Size: <%= @pet.size %></p> 
+
+<%= link_to "Edit", edit_pet_path(@pet) %>
+<%= form_tag pet_path(@pet.id), method: "delete" do %>
+    <%= submit_tag "Delete?" %> 
+    <%= end %> 
