@@ -1,6 +1,7 @@
 <h3> Upcoming Doggy Hangouts </h3>
 
  <% @user.received_requests.each do |r| %> 
+    
     <% if r.accept %> 
         <p> Appointment with: </p> 
         <ul>
@@ -9,11 +10,8 @@
         <li>On: <%= r.date %></li>
         </ul> 
     <% else %>
-
-    <i>None at this time </i> 
-
+    <p> None at this time </p> 
     <%end %> 
-
 <% end %> 
 
 <h4>Requests Received</h4>
