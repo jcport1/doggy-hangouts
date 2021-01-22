@@ -4,6 +4,6 @@ class Pet < ApplicationRecord
     has_many :requests
     has_many :listings 
 
-    validates :name, :age, size, presence: true 
+    validates :name, :age, :size, presence: true 
     
 end
