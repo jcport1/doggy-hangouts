@@ -10,33 +10,32 @@
         <li>Dog: <%= r.pet.name %></li>
         <li>Date & Time: <%= r.date.strftime("%b %e, %l:%M %p") %></li>
         </ul> 
-    <%end %> 
+    <% end %> 
 <% end %> 
 
 <h4>Requests Received</h4>
 
-# <i>pending approval </i>
+<i> pending approval </i> 
 
     <ul> 
 
-    <% if @user.received_requests %> 
-
         <% @user.received_requests.each do |r| %>
+           
+            <% if r.accept = nil %> 
             <li>From: <%= r.user.name %> - <%= link_to r.subject_line, request_path(r) %> - Received on <%= r.created_at.strftime("%b %e, %l:%M %p")%></li>
-            <% end %> 
-        <% else %> 
-        <p> None at this time </p> 
+            <% end %>
     <% end %> 
     </ul>
 
 
 
 <h4>Requests Sent</h4> 
+
 <ul> 
 
 <% @user.requests.each do |r| %>
     <li> To <%= recipient(r) %> - <%=link_to r.subject_line, user_request_path(r) %> - sent on: <%= r.created_at.strftime("%b %e, %l:%M %p") %> </li>
-    
+
     <% end %>
 </ul> 
 

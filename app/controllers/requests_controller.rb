@@ -54,6 +54,7 @@ class RequestsController < ApplicationController
 
     def show 
         @request = Request.find_by_id(params[:id])
+     
     end
 
 
