@@ -1,0 +1,32 @@
+<% if @request.user != current_user %> 
+
+    <% if @request.accept = nil %> 
+
+        <h4> Do you want to approve this request? </h4>
+
+            <%= form_for(@request) do |f| %> 
+                <%= f.label 'accept', 'Accept' %> 
+                <%= f.radio_button :accept, true %>
+                <%= f.label 'accept', 'Decline' %> 
+                <%= f.radio_button :accept, false %>
+                <%= f.submit "Submit" %>
+                <% end %>
+
+            <% else %> 
+
+            <i> you already responded to this request </i> 
+            <% end %>
+        <% end %> 
+    
+    <% if recipient(@request) != current_user.name %> 
+
+        <p> Request status:</p>
+
+                <% if @request.accept = true %>
+                    <i> accepted by <%= recipient(@request)%></i> 
+                <% elsif @request.accept = false %>
+                    <i> declined by recipient <%=(@request)%></i> 
+                <% else %>
+                <i> still pending </i> 
+         <% end %> 
+    <% end %> 
