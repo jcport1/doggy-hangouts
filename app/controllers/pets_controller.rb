@@ -9,6 +9,7 @@ class PetsController < ApplicationController
     def new
 
         @pet = Pet.new 
+        authorized_to_edit?
 
     end
     
@@ -37,6 +38,7 @@ class PetsController < ApplicationController
     def update 
         @pet = Pet.find(params[:id])
         @pet.update(pet_params)
+        authorized_to_edit?
         redirect_to user_path(current_user)
 
     end
@@ -54,5 +56,11 @@ class PetsController < ApplicationController
 
     def pet_params 
         params.require(:pet).permit(:name, :age, :size)
+    end
+
+    def authorized_to_edit?
+
+        redirect_to users_path(current_user), notice: "You are not authorized to edit" if !@pet || @lpet.user != current_user 
+
     end
 end
