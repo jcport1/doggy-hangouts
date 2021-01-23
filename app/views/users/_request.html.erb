@@ -1,5 +1,6 @@
 <h3> Upcoming Doggy Hangouts </h3>
 
+
  <% @user.received_requests.each do |r| %> 
 
     <% if r.accept %> 
@@ -9,8 +10,6 @@
         <li>Dog Pal: <%= r.pet.name %></li>
         <li>Date & Time: <%= r.date.strftime("%b %e, %l:%M %p") %></li>
         </ul> 
-    <% else %>
-    <p> None at this time </p> 
     <%end %> 
 <% end %> 
 

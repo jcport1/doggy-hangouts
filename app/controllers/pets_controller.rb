@@ -3,13 +3,14 @@ class PetsController < ApplicationController
     def index
 
         @pets = Pet.all 
+        
 
     end
     
     def new
 
         @pet = Pet.new 
-        authorized_to_edit?
+       
 
     end
     
@@ -28,14 +29,17 @@ class PetsController < ApplicationController
     def show
 
         @pet = Pet.find(params[:id])
+        
     end
 
     def edit 
         @pet = Pet.find(params[:id])
+        authorized_to_edit?
     
     end
 
     def update 
+        
         @pet = Pet.find(params[:id])
         @pet.update(pet_params)
         authorized_to_edit?
@@ -60,7 +64,7 @@ class PetsController < ApplicationController
 
     def authorized_to_edit?
 
-        redirect_to users_path(current_user), notice: "You are not authorized to edit" if !@pet || @lpet.user != current_user 
+        redirect_to user_path(current_user), notice: "You are not authorized to edit" if !@pet || @pet.user != current_user 
 
     end
 end

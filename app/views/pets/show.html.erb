@@ -6,11 +6,12 @@
 <p>Birthday: </p> 
 <p> Size: <%= @pet.size %></p> 
 
-<% if authorized_to_edit?(@pet) %>
+<% if authorized_to_edit_pet?(@pet)%>
 
 <%= link_to "Edit", edit_pet_path(@pet) %>
 <br>
 <br> 
 <%= button_to "Delete", pet_path(@pet), method: :delete, data: { confirm: 'Are you sure you want to delete this record?' }%> 
+
 <% end %>
     

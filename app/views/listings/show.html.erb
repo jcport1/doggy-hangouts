@@ -6,13 +6,22 @@
     <%= @listing.content %>
     <br> 
     <br> 
-    <p> Author: <%= link_to @listing.author.name, user_path(@listing.author) %></p>
-    <p> Posted on: <%= @listing.created_at %></p>
-    <p><%= link_to "Make a Request", new_listing_request_path(@listing) %>
-    <br>
-    <br>
 
-<% if authorized_to_edit?(@listing) %>
+    <% if !authored_by_user?(@listing) %>
+
+            <p> Author: <%= link_to @listing.author.name, user_path(@listing.author) %></p>
+        <% else %> 
+            <p> Author: self </p>
+    <% end %> 
+    <p> Posted on: <%= @listing.created_at %></p>
+
+    <% if !self_request?(@listing) %> 
+            <p><%= link_to "Make a Request", new_listing_request_path(@listing) %>
+            <br>
+            <br>
+    <% end %>
+
+<% if authorized_to_edit_listing?(@listing) %>
 
 <%= link_to "Edit", edit_listing_path(@listing) %>
 <%= button_to "Delete", listing_path(@listing), method: :delete, data: { confirm: 'Are you sure you want to delete this record?' }%> 

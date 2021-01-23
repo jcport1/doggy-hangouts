@@ -9,9 +9,7 @@ class RequestsController < ApplicationController
         if params[:listing_id] && @listing = Listing.find_by_id(params[:listing_id])
 
             @request = @listing.requests.build
-
-            
-
+            binding.pry 
         else 
 
             @error = "Listing does not exist" if params[:listing_id]
@@ -24,8 +22,8 @@ class RequestsController < ApplicationController
 
     def create
 
-        @request = Request.create(request_params)
-        @request.user_id = session[:user_id]
+        @request = current_user.requests.build(request_params)
+               
     
         if @request.save
 
@@ -65,6 +63,12 @@ class RequestsController < ApplicationController
     def request_params 
         params.require(:request).permit(:subject_line, :message, :date, :accept, :pet_id, :listing_id)
     end
+
+    # def self_request_denied?
+    
+    #     redirect_to listings_path, notice: "You can't send a request to yourself" if @request.listing.author == @request.user
+        
+    # end
 
 
 end
