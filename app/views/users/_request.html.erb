@@ -21,7 +21,7 @@
 
         <% @user.received_requests.each do |r| %>
            
-            <% if r.accept = nil %> 
+            <% if r.accept.nil? %> 
             <li>From: <%= r.user.name %> - <%= link_to r.subject_line, request_path(r) %> - Received on <%= r.created_at.strftime("%b %e, %l:%M %p")%></li>
             <% end %>
     <% end %> 
@@ -34,7 +34,7 @@
 <ul> 
 
 <% @user.requests.each do |r| %>
-    <li> To <%= recipient(r) %> - <%=link_to r.subject_line, user_request_path(r) %> - sent on: <%= r.created_at.strftime("%b %e, %l:%M %p") %> </li>
+    <li> To <%= recipient(r) %> - <%=link_to r.subject_line, user_request_path(r) %> - sent on: <%= r.created_at.strftime("%b %e, %l:%M %p") %> - Status: <%= request_status(r) %> </li>
 
     <% end %>
 </ul> 

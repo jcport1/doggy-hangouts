@@ -6,7 +6,7 @@
 <p>Date & Time Requested: <%= @request.date %></p>
 <br>
 <br>
-<p> Sent from <%= link_to @request.user.name, user_path(@request)%></p>
+<p> Sender <%= link_to @request.user.name, user_path(@request)%></p>
 
 <%= render 'status' %> 
 

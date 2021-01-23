@@ -22,9 +22,9 @@
 
         <p> Request status:</p>
 
-                <% if @request.accept = true %>
+                <% if @request.accept == true %>
                     <i> accepted by <%= recipient(@request)%></i> 
-                <% elsif @request.accept = false %>
+                <% elsif @request.accept == false %>
                     <i> declined by recipient <%=(@request)%></i> 
                 <% else %>
                 <i> still pending </i> 
