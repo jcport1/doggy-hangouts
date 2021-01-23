@@ -1,6 +1,7 @@
-<% if @request.user != current_user %> 
 
-    <% if @request.accept = nil %> 
+<% if recipient(@request) == current_user.name %> 
+
+    <% if @request.accept.nil? %> 
 
         <h4> Do you want to approve this request? </h4>
 
@@ -18,7 +19,7 @@
             <% end %>
         <% end %> 
     
-    <% if recipient(@request) != current_user.name %> 
+    <% if @request.user != current_user %> 
 
         <p> Request status:</p>
 

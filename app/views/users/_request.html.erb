@@ -3,7 +3,7 @@
 
  <% @user.received_requests.each do |r| %> 
 
-    <% if r.accept %> 
+    <% if r.accept == true %> 
         <p> Appointment with: </p> 
         <ul>
         <li>Owner: <%= r.user.name %></li>

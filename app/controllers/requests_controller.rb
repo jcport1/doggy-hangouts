@@ -48,12 +48,14 @@ class RequestsController < ApplicationController
 
         @request = Request.find_by_id(params[:id])
         @request.update(request_params)
+        
         redirect_to user_path(current_user)
         
     end
 
     def show 
         @request = Request.find_by_id(params[:id])
+        
      
     end
 
