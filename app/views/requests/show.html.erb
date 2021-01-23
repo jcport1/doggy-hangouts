@@ -8,7 +8,9 @@
 <br>
 <p> Sent from <%= link_to @request.user.name, user_path(@request)%></p>
 
-
+#User who sent request should not be able to accept request i.e. @request.user ! = current_user 
+#User who received request should be able to accept request i.e @user.received_requests 
+#
 <% if @request.user != current_user %> 
 
     <h4> Do you want to approve this request? </h4>

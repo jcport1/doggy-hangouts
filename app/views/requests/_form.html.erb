@@ -1,6 +1,7 @@
 <%= render partial: "layouts/errors", locals: {object: @request} %>
 
 <%= form_for(@request) do |f| %>
+
     <%= f.label :subject_line %>
     <%= f.text_field :subject_line %>
     <br>

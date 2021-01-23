@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+    # Location.create(description: "New York City", user_id: , listing_id: )
+    # Location.create(description: "San Francisco", user_id: , listing_id: )
+    # Location.create(description: "Houston", user_id: , listing_id: )
+    # Location.create(description: "Dallas", user_id: , listing_id: )
+
     10.times do 
 
         User.create(username: Faker::Internet.username, email: Faker::Internet.email, password:"password", name: Faker::Name.name )

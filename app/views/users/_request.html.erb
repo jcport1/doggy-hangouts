@@ -7,7 +7,7 @@
         <p> Appointment with: </p> 
         <ul>
         <li>Owner: <%= r.user.name %></li>
-        <li>Dog Pal: <%= r.pet.name %></li>
+        <li>Dog: <%= r.pet.name %></li>
         <li>Date & Time: <%= r.date.strftime("%b %e, %l:%M %p") %></li>
         </ul> 
     <%end %> 
@@ -15,15 +15,17 @@
 
 <h4>Requests Received</h4>
 
-<i>pending approval </i>
+# <i>pending approval </i>
 
     <ul> 
-    <% @user.received_requests.each do |r| %>
-        <% if r.accept.nil? %> 
+
+    <% if @user.received_requests %> 
+
+        <% @user.received_requests.each do |r| %>
             <li>From: <%= r.user.name %> - <%= link_to r.subject_line, request_path(r) %> - Received on <%= r.created_at.strftime("%b %e, %l:%M %p")%></li>
+            <% end %> 
         <% else %> 
-        <p>- None at this time</p>
-        <% end %> 
+        <p> None at this time </p> 
     <% end %> 
     </ul>
 
@@ -33,7 +35,8 @@
 <ul> 
 
 <% @user.requests.each do |r| %>
-    <li> <%= link_to r.subject_line, user_request_path(r) %> - sent on: <%= r.created_at.strftime("%b %e, %l:%M %p") %> </li>
+    <li> To <%= recipient(r) %> - <%=link_to r.subject_line, user_request_path(r) %> - sent on: <%= r.created_at.strftime("%b %e, %l:%M %p") %> </li>
+    
     <% end %>
 </ul> 
 

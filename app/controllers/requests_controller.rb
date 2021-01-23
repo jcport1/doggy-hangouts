@@ -9,7 +9,8 @@ class RequestsController < ApplicationController
         if params[:listing_id] && @listing = Listing.find_by_id(params[:listing_id])
 
             @request = @listing.requests.build
-            binding.pry 
+        
+           
         else 
 
             @error = "Listing does not exist" if params[:listing_id]
@@ -23,8 +24,8 @@ class RequestsController < ApplicationController
     def create
 
         @request = current_user.requests.build(request_params)
-               
-    
+         
+
         if @request.save
 
             flash[:notice] = "Your request was sent!"
