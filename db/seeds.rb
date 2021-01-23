@@ -6,22 +6,31 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-5.times do 
+    10.times do 
 
-    user1 = User.create(username: email: Faker::Internet.email, password:"password" name: Faker::Name.name )
-    user2 = User.create(username: email: Faker::Internet.email password: "password" name: Faker::Name.name )
+        User.create(username: Faker::Internet.username, email: Faker::Internet.email, password:"password", name: Faker::Name.name )
+        
+    end
 
-    pet1 = Pet.create(name: Faker::Creature::Dog.name, age: size:, user_id: user1)
-    pet2 = Pet.create(name: age: size:, user_id: user2)
+    users = User.all 
 
-end 
+    10.times do 
 
-2.times do
+        Pet.create(name: Faker::Creature::Dog.name, age: Faker::Number.between(from: 1, to: 18), size: "Medium", user: users[rand(0..9)])
 
-    list1 = Listing.create(title: content: author_id: user1 pet_id: pet1 )
-    list2 = Listing.create(title: content: author_id: pet2 pet_id: pet2 )
+    end 
+        
 
-end 
+
+    # 20.times do
+
+    #      Listing.create(title: Faker::Book.title, content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", author: users[rand(0..9)], pet: pets[rand(0..9)])
+        
+
+    # end 
+
+
+puts("Seeded!")
 
 # Request.create(message: date: pet_id: listing_id:)
 
