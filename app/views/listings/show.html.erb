@@ -12,7 +12,9 @@
     <br>
     <br>
 
+<% if authorized_to_edit?(@listing) %>
+
 <%= link_to "Edit", edit_listing_path(@listing) %>
-<br>
-<br> 
 <%= button_to "Delete", listing_path(@listing), method: :delete, data: { confirm: 'Are you sure you want to delete this record?' }%> 
+
+<% end %>

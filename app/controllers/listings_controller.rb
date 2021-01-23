@@ -1,5 +1,7 @@
 class ListingsController < ApplicationController
 
+    # before_action :set_listing, only: [:show, :edit, :update]
+
     def index
 
         if params[:user_id] && @user = User.find_by_id(params[:user_id])
@@ -28,7 +30,7 @@ class ListingsController < ApplicationController
             if @listing.save
                 #redirect to a homepage or dashboard
 
-                redirect_to listings_path 
+                redirect_to listings_path, notice: 'Listing was successfuly created.'
 
             else 
                 render :new 
@@ -45,6 +47,7 @@ class ListingsController < ApplicationController
     def edit
 
         @listing = Listing.find(params[:id])
+        authorized_to_edit?
 
     end
 
@@ -52,7 +55,8 @@ class ListingsController < ApplicationController
 
         @listing = Listing.find(params[:id])
         @listing.update(listing_params)
-        redirect_to user_listings_path(current_user)
+        authorized_to_edit? 
+        redirect_to user_listings_path(current_user), notice: 'Listing was successfully updated.'
        
         
     end
@@ -60,7 +64,7 @@ class ListingsController < ApplicationController
     def destroy
 
         Listing.find(params[:id]).destroy
-        redirect_to listings_path 
+        redirect_to listings_path, notice: 'Listing was successfully destroyed'
         
     end
 
@@ -70,4 +74,17 @@ class ListingsController < ApplicationController
     def listing_params 
         params.require(:listing).permit(:title, :content, :pet_id, :user_id)
     end
+
+    def authorized_to_edit?
+
+        redirect_to listings_path, notice: "You are not authorized to edit" if !@listing || @listing.author != current_user 
+
+    end
+
+    #dry method
+
+    # def set_listing
+    #     @listing = Listing.find_by(params[:id])
+    #     redirect_to listings_path if !@listing
+    # end
 end

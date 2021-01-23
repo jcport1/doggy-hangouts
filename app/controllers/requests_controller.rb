@@ -65,4 +65,6 @@ class RequestsController < ApplicationController
     def request_params 
         params.require(:request).permit(:subject_line, :message, :date, :accept, :pet_id, :listing_id)
     end
+
+
 end

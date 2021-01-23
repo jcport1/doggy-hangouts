@@ -1,8 +1,12 @@
 class ApplicationController < ActionController::Base
 
-    #this macro makes it a requirement for user to be logged in before granted access
 
+    #this macro makes it a requirement for user to be logged in before granted access
     before_action :login_required 
+   
+
+        helper_method :current_user 
+        helper_method :logged_in?
 
 
     def login_required
@@ -19,6 +23,7 @@ class ApplicationController < ActionController::Base
         !!current_user
     end
 
+
     def current_user 
         if session[:user_id]
             @current_user = User.find(session[:user_id])
@@ -27,7 +32,4 @@ class ApplicationController < ActionController::Base
             false 
         end
     end
-
-    helper_method :current_user 
-    helper_method :logged_in?
 end
