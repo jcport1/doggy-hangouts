@@ -1,4 +1,4 @@
-<h1> Request from <%= @request.user.name %> </h1> 
+<h1> Request </h1> 
 
 <p>Message: <%= @request.message %></p>
 <br>
@@ -6,12 +6,10 @@
 <p>Date & Time Requested: <%= @request.date %></p>
 <br>
 <br>
+<p> Sent from <%= link_to @request.user.name, user_path(@request)%></p>
 
-<% if @request.accept %> 
 
-    <h4> You already approved this request </h4> 
-
-    <% else %> 
+<% if @request.user != current_user %> 
 
     <h4> Do you want to approve this request? </h4>
 

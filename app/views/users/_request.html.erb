@@ -32,8 +32,8 @@
 <h4>Requests Sent</h4> 
 <ul> 
 
-<% @user.requests.each do |p| %>
-    <li>Message: <%= p.message %> - Sent on: <%= p.created_at.strftime("%b %e, %l:%M %p") %> </li>
+<% @user.requests.each do |r| %>
+    <li> <%= link_to r.subject_line, user_request_path(r) %> - sent on: <%= r.created_at.strftime("%b %e, %l:%M %p") %> </li>
     <% end %>
 </ul> 
 
