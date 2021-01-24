@@ -5,7 +5,8 @@
     <br> 
     <%= @listing.content %>
     <br> 
-    <br> 
+    <br>
+    <p>Location: <%= @listing.location.name %></p>
 
     <% if !authored_by_user?(@listing) %>
 

@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resources :users do 
     resources :listings, only: [:index]
   end
+
+  resources :locations 
   resources :listings do 
     resources :requests, only: [:new, :create, :index]
   end

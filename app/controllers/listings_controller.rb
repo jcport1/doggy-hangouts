@@ -15,7 +15,8 @@ class ListingsController < ApplicationController
 
     def new
 
-        @listing = Listing.new 
+        @listing = Listing.new
+        @listing.build_location 
 
     end
     
@@ -23,7 +24,8 @@ class ListingsController < ApplicationController
 
         @listing = Listing.create(listing_params)
         @listing.author_id = session[:user_id]
-        
+        @listing.location_id = params[:listing][:location_id]
+
         #pet id? 
 
 
@@ -33,6 +35,7 @@ class ListingsController < ApplicationController
                 redirect_to listings_path, notice: 'Listing was successfuly created.'
 
             else 
+                @listing.build_location 
                 render :new 
             end
 
@@ -72,7 +75,7 @@ class ListingsController < ApplicationController
     
     #belongs to author, pet
     def listing_params 
-        params.require(:listing).permit(:title, :content, :pet_id, :user_id)
+        params.require(:listing).permit(:title, :content, :pet_id, :location_id, location_attributes: [:name])
     end
 
     def authorized_to_edit?

@@ -15,7 +15,10 @@
     <br> 
     <h4> Choose a location:</h4>
 
+    <div>
+
     <%= f.collection_select :location_id, Location.all, :id, :name, include_blank: 'Select One' %>
+    </div> 
     <br>
     <br>
 
@@ -24,7 +27,7 @@
     <%= f.fields_for :location, Location.new do |l_location| %> 
         <%= l_location.label :name %>
         <%= l_location.text_field :name %>
-
+        
         <% end %> 
 
     <br>
