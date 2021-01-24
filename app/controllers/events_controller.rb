@@ -11,13 +11,13 @@ class EventsController < ApplicationController
         if @listing = Listing.find_by_id(params[:listing_id])
 
             @event = @listing.events.build
-            @event.pets = current_user.pets 
+            # @pets = Pet.all 
 
         
         else 
 
             # @error = "Listing does not exist" if params[:listing_id]
-            @event.pets = current_user.pets 
+            # @event.pets = current_user.pets 
             @event = Event.new 
 
         end
@@ -69,7 +69,7 @@ class EventsController < ApplicationController
     #belongs to user, pet, & listing 
 
     def event_params 
-        params.require(:event).permit(:subject_line, :message, :date, :accept, :safety, :vaccinations, :pet_id, :listing_id)
+        params.require(:event).permit(:subject_line, :message, :date, :accept, :safety, :vaccinations, pet_ids: [], :listing_id)
     end
 
     # def self_event_denied?

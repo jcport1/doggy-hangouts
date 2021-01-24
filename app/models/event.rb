@@ -3,7 +3,7 @@ class Event < ApplicationRecord
     belongs_to :user 
     belongs_to :listing
     has_many :event_pets 
-    has_many :events, through: :event_pets 
+    has_many :pets, through: :event_pets 
    
     # validates :subject_line, :message, :date, presence: true
     validates :listing, uniqueness: { scope: :user, message: "You already joined this event"}

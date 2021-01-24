@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_24_154243) do
+ActiveRecord::Schema.define(version: 2021_01_24_161345) do
 
   create_table "event_pets", force: :cascade do |t|
     t.integer "event_id", null: false
@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 2021_01_24_154243) do
     t.datetime "date"
     t.boolean "accept"
     t.integer "user_id"
-    t.integer "pet_id"
     t.integer "listing_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

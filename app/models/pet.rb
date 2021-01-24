@@ -4,7 +4,7 @@ class Pet < ApplicationRecord
     has_many :event_pets 
     has_many :events, through: :event_pets 
 
-    has_many :requests
+    # has_many :requests
     has_many :listings 
 
     validates :name, :age, :size, :breed, presence: true 
