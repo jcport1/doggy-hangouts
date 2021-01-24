@@ -6,23 +6,25 @@ class EventsController < ApplicationController
 
     def new
 
-        # if params[:listing_id] && @listing = Listing.find_by_id(params[:listing_id])
 
-        if @listing = Listing.find_by_id(params[:listing_id])
+        # @event = Event.new(listing_id: params[:location_id])
+        # # @pets = Pet.all 
 
-            @event = @listing.events.build
+        if params[:listing_id] && @listing = Listing.find_by_id(params[:listing_id])
+
+        # if @listing = Listing.find_by_id(params[:listing_id])
+
             # @pets = Pet.all 
-
-        
+            @event = @listing.events.build
+            
         else 
 
-            # @error = "Listing does not exist" if params[:listing_id]
-            # @event.pets = current_user.pets 
+            @error = "Listing does not exist" if params[:listing_id]
+            # @event.pets = current_user.pets
+            # @pets = Pet.all 
             @event = Event.new 
-
         end
-
-       
+   
     end
 
     def create
@@ -32,6 +34,8 @@ class EventsController < ApplicationController
         if @event.save
 
             flash[:notice] = "You successfully joined this upcoming event!"
+
+           
 
             redirect_to "/listings"
 
@@ -69,7 +73,7 @@ class EventsController < ApplicationController
     #belongs to user, pet, & listing 
 
     def event_params 
-        params.require(:event).permit(:subject_line, :message, :date, :accept, :safety, :vaccinations, pet_ids: [], :listing_id)
+        params.require(:event).permit(:subject_line, :message, :date, :accept, :safety, :vaccinations, :listing_id, pet_ids:[])
     end
 
     # def self_event_denied?

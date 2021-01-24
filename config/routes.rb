@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   resources :locations 
   resources :listings do 
-    resources :events, only: [:new, :create, :index]
+    resources :events, only: [:new, :index]
   end
   resources :events
   resources :pets

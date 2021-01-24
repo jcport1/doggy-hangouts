@@ -1,4 +1,4 @@
-module RequestsHelper
+module EventsHelper
 
     def recipient(r)
 

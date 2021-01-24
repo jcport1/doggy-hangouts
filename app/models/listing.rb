@@ -1,7 +1,7 @@
 class Listing < ApplicationRecord
 
     belongs_to :author, class_name: "User"
-    belongs_to :pet
+    belongs_to :pet, class_name: "Pet"
     belongs_to :location
     has_many :events
     has_many :user_requestors, through: :events, source: :user_id

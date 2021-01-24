@@ -1,12 +1,12 @@
 <h1> Join this Meet-up! </h1> 
 
-<p>Message: <%= @request.message %></p>
+<p>Message: <%= @event.message %></p>
 <br>
 <br>
-<p>Date & Time Requested: <%= @request.date.strftime("%b %e, %l:%M %p") %></p>
+<p>Date & Time Requested: <%= @event.date.strftime("%b %e, %l:%M %p") %></p>
 <br>
 <br>
-<p> Sender <%= link_to @request.user.name, user_path(@request)%></p>
+<p> Sender <%= link_to @event.user.name, user_path(@event)%></p>
 
 #do you agree to follow covid guidelines
 #is your dog vaccinated?
