@@ -1,13 +1,9 @@
 class ApplicationController < ActionController::Base
 
-
     #this macro makes it a requirement for user to be logged in before granted access
     before_action :login_required 
-   
-
-        helper_method :current_user 
-        helper_method :logged_in?
-
+    helper_method :current_user 
+    helper_method :logged_in?
 
     def login_required
 
