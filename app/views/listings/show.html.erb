@@ -17,7 +17,7 @@
     <p> Posted on: <%= @listing.created_at %></p>
 
     <% if !self_request?(@listing) %> 
-            <p><%= link_to "Make a Request", new_listing_request_path(@listing) %>
+            <p><%= link_to "Click to Join the Fun", new_listing_request_path(@listing) %>
             <br>
             <br>
     <% end %>
