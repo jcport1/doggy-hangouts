@@ -1,10 +1,10 @@
-<%= render partial: "layouts/errors", locals: {object: @request} %>
+<%= render partial: "layouts/errors", locals: {object: @event} %>
 
-<%= form_for(@request) do |f| %>
+<%= form_for(@event) do |f| %>
  
     <p> Who's joining you on this adventure? </p> 
 
-    <%= f.collection_check_boxes(:pet_id, current_user.pets, :id, :name) do |p| %>
+    <%= f.collection_check_boxes(:pet_ids, Pets.all, :id, :name) do |p| %>
         <%= p.check_box + p.text %> 
         <% end %> 
     

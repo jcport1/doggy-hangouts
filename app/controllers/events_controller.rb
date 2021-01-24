@@ -10,12 +10,14 @@ class EventsController < ApplicationController
 
         if @listing = Listing.find_by_id(params[:listing_id])
 
-
             @event = @listing.events.build
+            @event.pets = current_user.pets 
+
         
         else 
 
             # @error = "Listing does not exist" if params[:listing_id]
+            @event.pets = current_user.pets 
             @event = Event.new 
 
         end
