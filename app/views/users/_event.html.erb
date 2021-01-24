@@ -1,50 +1,22 @@
 <h3> My Upcoming Hosted Events </h3>
 
+<p> Event Details: </p> 
 
- <% @user.listings.each do |e| %> 
-
-        <p> Event Details: </p> 
-        <ul>
-        <li>Location: <%= e.location %></li>
-        <li>Date & Time: <%= e.date.strftime("%b %e, %l:%M %p") %></li>
-        </ul> 
+<ul>
+ <% @user.authored_listings.each do |e| %> 
+        <li>Location: <%= e.location.name %> | Date & Time: <%= e.date_time %></li>
     <% end %> 
-<% end %> 
+    </ul> 
+
 
 <h3> Upcoming Events </h3>
 
     <p> Event Details: </p> 
 
-    <ul> @user.events do |e|
-        <li>Location: <%= e.location %></li>
-        <li>Date & Time: <%= e.date.strftime("%b %e, %l:%M %p")  %></li>
+    <ul> 
+    <% @user.events do |e| %>
+        <li>Location: <%= e.location.name %></li>
+        <li>Date & Time: <%= e.date_time %></li>
         <li>Host: </li>
-    end
+    <% end %>
     </ul>
-
-# <h4>Requests Received</h4>
-
-# <i> pending approval </i> 
-
-#     <ul> 
-
-#         <% @user.received_requests.each do |r| %>
-           
-#             <% if r.accept.nil? %> 
-#             <li>From: <%= r.user.name %> - <%= link_to r.subject_line, request_path(r) %> - Received on <%= r.created_at.strftime("%b %e, %l:%M %p")%></li>
-#             <% end %>
-#     <% end %> 
-#     </ul>
-
-
-
-# <h4>Requests Sent</h4> 
-
-# <ul> 
-
-# <% @user.requests.each do |r| %>
-#     <li> To <%= recipient(r) %> - <%=link_to r.subject_line, request_path(r) %> - sent on: <%= r.created_at.strftime("%b %e, %l:%M %p") %> - Status: <%= request_status(r) %> </li>
-
-#     <% end %>
-# </ul> 
-
