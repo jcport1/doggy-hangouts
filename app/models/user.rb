@@ -4,14 +4,14 @@ class User < ApplicationRecord
 
     #sent requests
 
-    has_many :requests 
+    has_many :events
 
-    has_many :answered_listings, through: :requests, source: :listing
+    has_many :answered_listings, through: :events, source: :listing
     has_many :authored_listings, foreign_key: :author_id, class_name: "Listing"
 
     #received requests 
 
-    has_many :received_requests, through: :authored_listings, source: :requests
+    has_many :received_events, through: :authored_listings, source: :events
 
     validates :username, uniqueness: true, presence: true
     validates :email, uniqueness: true, presence: true 

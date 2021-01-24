@@ -1,7 +1,7 @@
 class Pet < ApplicationRecord
 
     belongs_to :user
-    belongs_to :request 
+    belongs_to :event
     # has_many :requests
     has_many :listings 
 

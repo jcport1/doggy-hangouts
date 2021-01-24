@@ -6,14 +6,16 @@ class EventsController < ApplicationController
 
     def new
 
-        if params[:listing_id] && @listing = Listing.find_by_id(params[:listing_id])
+        # if params[:listing_id] && @listing = Listing.find_by_id(params[:listing_id])
+
+        if @listing = Listing.find_by_id(params[:listing_id])
+
 
             @event = @listing.events.build
         
-           
         else 
 
-            @error = "Listing does not exist" if params[:listing_id]
+            # @error = "Listing does not exist" if params[:listing_id]
             @event = Event.new 
 
         end
@@ -24,8 +26,6 @@ class EventsController < ApplicationController
     def create
 
         @event = current_user.events.build(event_params)
-        binding.pry 
-         
 
         if @event.save
 
