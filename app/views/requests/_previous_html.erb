@@ -1,0 +1,18 @@
+<%= render partial: "layouts/errors", locals: {object: @request} %>
+
+<%= form_for(@request) do |f| %>
+
+    <%= f.label :subject_line %>
+    <%= f.text_field :subject_line %>
+    <br>
+    <br>
+    <%= f.label :message %>
+    <%= f.text_area :message %>
+    <br>
+    <br>
+    <%= f.label :date %>
+    <%= f.datetime_local_field :date %>
+    <br>
+    <br>
+    <%= f.submit %>
+    <% end %> 

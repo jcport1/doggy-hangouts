@@ -1,22 +1,24 @@
 <%= render partial: "layouts/errors", locals: {object: @request} %>
 
 <%= form_for(@request) do |f| %>
-
-    <%= f.label :subject_line %>
-    <%= f.text_field :subject_line %>
-    <br>
-    <br>
-    <%= f.label :message %>
-    <%= f.text_area :message %>
-    <br>
-    <br>
-    <%= f.label :date %>
-    <%= f.datetime_local_field :date %>
-    <br>
-    <br>
+ 
+    <p> Who's joining you on this adventure? </p> 
     <%= f.label :pet_id %>
     <%= f.select :pet_id, current_user.pets.collect {|p| [p.name, p.id]} %>
     <%= f.hidden_field :listing_id %>
+
+    <p> Do you agree to follow social distancing guidelines and mask up? </p> 
+        <%= f.label 'accept', 'Accept' %> 
+        <%= f.radio_button :accept, true %>
+        <%= f.label 'accept', 'Decline' %> 
+        <%= f.radio_button :accept, false %>
+
+    <p> Is your dog up-to-date on vaccinations? </p> 
+        <%= f.label 'accept', 'Accept' %> 
+        <%= f.radio_button :accept, true %>
+        <%= f.label 'accept', 'Decline' %> 
+        <%= f.radio_button :accept, false %>
+        
     <br>
     <br>
    <%= f.submit %>
