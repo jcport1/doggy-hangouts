@@ -4,7 +4,7 @@
 
 <ul>
  <% @user.authored_listings.each do |e| %> 
-        <li>Location: <%= e.location.name %> | Date & Time: <%= e.date_time %></li>
+        <li>Location: <%= e.location.name %> | Date & Time: <%= e.date_time.strftime("%b %e, %l:%M %p") %></li>
     <% end %> 
     </ul> 
 

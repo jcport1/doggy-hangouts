@@ -7,7 +7,7 @@
     <br> 
     <br>
     <p>Location: <%= @listing.location.name %></p>
-    <p>Date/Time: <%= @listing.date_time %></p>
+    <p>Date/Time: <%= @listing.date_time.strftime("%b %e, %l:%M %p") %></p>
 
     <% if !authored_by_user?(@listing) %>
 

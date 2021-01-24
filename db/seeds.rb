@@ -29,14 +29,15 @@
     p6 = Pet.create(name: "balto", age: "adolescent", breed: "labrador retriever", size: "large", user:u6)
     p7 = Pet.create(name: "togo", age: "adult", breed: "chihuahua", size: "small", user:u7)
     p8 = Pet.create(name: "champ", age: "senior", breed: "scottish terrier", size: "medium", user:u8)
+    p9 = Pet.create(name: "bubs", age: "puppy", breed: "corgie", size: "small", user:u1)
 
-    Listing.create(title: "Dog Meet-up soon!", content: "lorem ipsum", author:u1, pet:p1, location:l1)
-    Listing.create(title: "Pups Chill Session", content: "lorem ipsum", author:u2, pet:p2, location:l2)
-    Listing.create(title: "Valentines Day Weekend", content: "lorem ipsum", author:u3, pet:p3, location:l3)
-    Listing.create(title: "Next week?", content: "lorem ipsum", author:u4, pet:p4, location:l2)
-    Listing.create(title: "Puppy Party", content: "lorem ipsum", author:u5, pet:p5, location:l3)
-    Listing.create(title: "Agility Activity at Park", content: "lorem ipsum", author:u7, pet:p7, location:l1)
-    Listing.create(title: "Small Dogs Get Together", content: "lorem ipsum", author:u8, pet:p8, location:l2)
+    Listing.create(title: "Dog Meet-up soon!", content: "lorem ipsum", date_time: '2021-02-06 10:00:00 UTC',  author:u1, pet:p1, location:l1)
+    Listing.create(title: "Pups Chill Session", content: "lorem ipsum", date_time: '2021-02-07 10:00:00 UTC', author:u2, pet:p2, location:l2)
+    Listing.create(title: "Valentines Day Weekend", content: "lorem ipsum", date_time: '2021-02-14 10:00:00 UTC', author:u3, pet:p3, location:l3)
+    Listing.create(title: "Next week?", content: "lorem ipsum", author:u4, date_time: '2021-02-13 10:00:00 UTC', pet:p4, location:l2)
+    Listing.create(title: "Puppy Party", content: "lorem ipsum", author:u5, date_time: '2021-02-20 10:00:00 UTC', pet:p5, location:l3)
+    Listing.create(title: "Agility Activity at Park", content: "lorem ipsum", date_time: '2021-02-21 10:00:00 UTC', author:u7, pet:p7, location:l1)
+    Listing.create(title: "Small Dogs Get Together", content: "lorem ipsum", date_time: '2021-02-27 10:00:00 UTC', author:u8, pet:p8, location:l2)
 
    
     # 10.times do 
