@@ -8,17 +8,17 @@
     <%= f.hidden_field :listing_id %>
 
     <p> Do you agree to follow social distancing guidelines and mask up? </p> 
-        <%= f.label 'accept', 'Accept' %> 
-        <%= f.radio_button :accept, true %>
-        <%= f.label 'accept', 'Decline' %> 
-        <%= f.radio_button :accept, false %>
+        <%= f.label 'safety', 'Accept' %> 
+        <%= f.radio_button :safety, true %>
+        <%= f.label 'safety', 'Decline' %> 
+        <%= f.radio_button :safety, false %>
 
     <p> Is your dog up-to-date on vaccinations? </p> 
-        <%= f.label 'accept', 'Accept' %> 
-        <%= f.radio_button :accept, true %>
-        <%= f.label 'accept', 'Decline' %> 
-        <%= f.radio_button :accept, false %>
-        
+        <%= f.label 'vaccination_valid', 'Accept' %> 
+        <%= f.radio_button :vaccination_valid, true %>
+        <%= f.label 'vaccination_valid', 'Decline' %> 
+        <%= f.radio_button :vaccination_valid, false %>
+
     <br>
     <br>
    <%= f.submit %>
