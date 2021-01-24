@@ -1,7 +1,7 @@
-<h3> Upcoming Doggy Hangouts </h3>
+<h3> My Upcoming Hosted Events </h3>
 
 
- <% @user.received_requests.each do |r| %> 
+ <% @user.received_events.each do |r| %> 
 
     <% if r.accept == true %> 
         <p> Appointment with: </p> 
