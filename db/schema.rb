@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_24_141238) do
+ActiveRecord::Schema.define(version: 2021_01_24_144823) do
+
+  create_table "events", force: :cascade do |t|
+    t.string "message"
+    t.datetime "date"
+    t.boolean "accept"
+    t.integer "user_id"
+    t.integer "pet_id"
+    t.integer "listing_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "subject_line"
+    t.boolean "safety"
+    t.boolean "vaccinations"
+  end
 
   create_table "listings", force: :cascade do |t|
     t.string "title"
@@ -37,20 +51,6 @@ ActiveRecord::Schema.define(version: 2021_01_24_141238) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "breed"
-  end
-
-  create_table "requests", force: :cascade do |t|
-    t.string "message"
-    t.datetime "date"
-    t.boolean "accept"
-    t.integer "user_id"
-    t.integer "pet_id"
-    t.integer "listing_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "subject_line"
-    t.boolean "safety"
-    t.boolean "vaccinations"
   end
 
   create_table "users", force: :cascade do |t|

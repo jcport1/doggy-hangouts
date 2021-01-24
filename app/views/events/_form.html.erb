@@ -3,8 +3,12 @@
 <%= form_for(@request) do |f| %>
  
     <p> Who's joining you on this adventure? </p> 
-    <%= f.label :pet_id %>
-    <%= f.select :pet_id, current_user.pets.collect {|p| [p.name, p.id]} %>
+
+    <%= f.collection_check_boxes(:pet_id, current_user.pets, :id, :name) do |p| %>
+        <%= p.check_box + p.text %> 
+        <% end %> 
+    
+
     <%= f.hidden_field :listing_id %>
 
     <p> Do you agree to follow social distancing guidelines and mask up? </p> 

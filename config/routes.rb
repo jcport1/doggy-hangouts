@@ -16,12 +16,12 @@ Rails.application.routes.draw do
 
   resources :locations 
   resources :listings do 
-    resources :requests, only: [:new, :create, :index]
+    resources :events, only: [:new, :create, :index]
   end
-  resources :requests
+  resources :events
   resources :pets
   resources :users do 
-    resources :requests, only: [:show]
+    resources :events, only: [:show]
   end
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
