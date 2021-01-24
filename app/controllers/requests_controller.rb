@@ -67,7 +67,7 @@ class RequestsController < ApplicationController
     #belongs to user, pet, & listing 
 
     def request_params 
-        params.require(:request).permit(:subject_line, :message, :date, :accept, :safety, :vaccination_valid, :pet_id, :listing_id)
+        params.require(:request).permit(:subject_line, :message, :date, :accept, :safety, :vaccinations, :pet_id, :listing_id)
     end
 
     # def self_request_denied?

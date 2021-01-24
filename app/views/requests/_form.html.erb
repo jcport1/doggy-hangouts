@@ -13,11 +13,11 @@
         <%= f.label 'safety', 'Decline' %> 
         <%= f.radio_button :safety, false %>
 
-    <p> Is your dog up-to-date on vaccinations? </p> 
-        <%= f.label 'vaccination_valid', 'Accept' %> 
-        <%= f.radio_button :vaccination_valid, true %>
-        <%= f.label 'vaccination_valid', 'Decline' %> 
-        <%= f.radio_button :vaccination_valid, false %>
+    <p> Is your dog up to date on vaccinations? </p> 
+        <%= f.label 'vaccinations', 'Yes' %> 
+        <%= f.radio_button :vaccinations, true %>
+        <%= f.label 'vaccinations', 'No' %> 
+        <%= f.radio_button :vaccinations, false %>
 
     <br>
     <br>

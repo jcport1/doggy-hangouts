@@ -5,8 +5,10 @@ class Request < ApplicationRecord
     belongs_to :pet
     
 
-    validates :subject_line, :message, :date, presence: true
+    # validates :subject_line, :message, :date, presence: true
     validates :listing, uniqueness: { scope: :user, message: "You already made a request"}
+    validates :safety, inclusion: { in: [ true ], message: "guidelines must be followed to attend" }
+    validates :vaccinations, inclusion: { in: [ true ], message: "must be up-to-date" }
     
     # validate :self_request_denied
 
