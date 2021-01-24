@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-    # Location.create(description: "New York City", user_id: , listing_id: )
-    # Location.create(description: "San Francisco", user_id: , listing_id: )
-    # Location.create(description: "Houston", user_id: , listing_id: )
-    # Location.create(description: "Dallas", user_id: , listing_id: )
+    l1 = Location.create(name: "Back Cove Park")
+    l2 = Location.create(name: "Eastern Prom Trail")
+    l3 = Location.create(name: "Bug Light Park")
+    
 
 
     u1 = User.create(username: "billy1", email: "billy@billy.com", password: "123", name: "billy")
@@ -21,22 +21,22 @@
     u7 = User.create(username: "james1", email: "james@james.com", password: "123", name: "james")
     u8 =User.create(username: "laura1", email: "laura@laura.com", password: "123", name: "laura")
 
-    p1 = Pet.create(name: "lulu", age: 1, size: "Small", user:u1)
-    p2 = Pet.create(name: "buddy", age: 2, size: "Medium", user:u2)
-    p3 = Pet.create(name: "coco", age: 3, size: "Large", user:u3)
-    p4 = Pet.create(name: "baxter", age: 4, size: "Small", user:u4)
-    p5 = Pet.create(name: "baobao", age: 5, size: "Medium", user:u5)
-    p6 = Pet.create(name: "balto", age: 6, size: "Large", user:u6)
-    p7 = Pet.create(name: "togo", age: 7, size: "Small", user:u7)
-    p8 = Pet.create(name: "champ", age: 8, size: "Medium", user:u8)
+    p1 = Pet.create(name: "lulu", age: "puppy", size: "small", user:u1)
+    p2 = Pet.create(name: "buddy", age: "young adult", size: "medium", user:u2)
+    p3 = Pet.create(name: "coco", age: "adult", size: "large", user:u3)
+    p4 = Pet.create(name: "baxter", age: "senior", size: "small", user:u4)
+    p5 = Pet.create(name: "baobao", age: "puppy", size: "medium", user:u5)
+    p6 = Pet.create(name: "balto", age: "young adult", size: "large", user:u6)
+    p7 = Pet.create(name: "togo", age: "adult", size: "small", user:u7)
+    p8 = Pet.create(name: "champ", age: "senior", size: "medium", user:u8)
 
-    Listing.create(title: "Lulu Needs Friends", content: "lorem ipsum", author:u1, pet:p1)
-    Listing.create(title: "Buddy Needs Friends", content: "lorem ipsum", author:u2, pet:p2)
-    Listing.create(title: "Coco Needs Friends", content: "lorem ipsum", author:u3, pet:p3)
-    Listing.create(title: "Baxter Needs Friends", content: "lorem ipsum", author:u4, pet:p4)
-    Listing.create(title: "Baobao Needs Friends", content: "lorem ipsum", author:u5, pet:p5)
-    Listing.create(title: "Togo Needs Friends", content: "lorem ipsum", author:u7, pet:p7)
-    Listing.create(title: "Champ Needs Friends", content: "lorem ipsum", author:u8, pet:p8)
+    Listing.create(title: "Lulu Needs Friends", content: "lorem ipsum", author:u1, pet:p1, location:l1)
+    Listing.create(title: "Buddy Needs Friends", content: "lorem ipsum", author:u2, pet:p2, location:l2)
+    Listing.create(title: "Coco Needs Friends", content: "lorem ipsum", author:u3, pet:p3, location:l3)
+    Listing.create(title: "Baxter Needs Friends", content: "lorem ipsum", author:u4, pet:p4, location:l2)
+    Listing.create(title: "Baobao Needs Friends", content: "lorem ipsum", author:u5, pet:p5, location:l3)
+    Listing.create(title: "Togo Needs Friends", content: "lorem ipsum", author:u7, pet:p7, location:l1)
+    Listing.create(title: "Champ Needs Friends", content: "lorem ipsum", author:u8, pet:p8, location:l2)
 
    
     # 10.times do 

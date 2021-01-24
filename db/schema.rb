@@ -10,13 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_21_235550) do
+ActiveRecord::Schema.define(version: 2021_01_24_024847) do
 
   create_table "listings", force: :cascade do |t|
     t.string "title"
     t.text "content"
     t.integer "author_id"
     t.integer "pet_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "location_id"
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

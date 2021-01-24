@@ -13,5 +13,18 @@
     <%= f.select :pet_id, current_user.pets.collect { |p| [p.name, p.id] } %> 
     <br>
     <br> 
+    <h4> Choose a Location:</h4>
+
+    <%= f.collection_select :location_id, Location.all, :id, :name, include_blank: 'Select One' %>
+    <br>
+    <br>
+
+    <p> Or Create a new Location:</p>
+    <%= f.fields_for :location do |l| %> 
+        <%= l.label :name %>
+        <%= l.text_field :name %>
+    <% end %> 
+    <br>
+    <br>
     <%= f.submit %>
 <% end %> 

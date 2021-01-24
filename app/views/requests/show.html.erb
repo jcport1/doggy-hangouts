@@ -3,12 +3,12 @@
 <p>Message: <%= @request.message %></p>
 <br>
 <br>
-<p>Date & Time Requested: <%= @request.date %></p>
+<p>Date & Time Requested: <%= @request.date.strftime("%b %e, %l:%M %p") %></p>
 <br>
 <br>
 <p> Sender <%= link_to @request.user.name, user_path(@request)%></p>
 
-# <%= render 'status' %> 
+
 
 
 

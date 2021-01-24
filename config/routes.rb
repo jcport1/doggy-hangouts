@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :locations
   #sets my homepage 
   get '/' => 'sessions#welcome'
   get '/signup' => 'users#new'

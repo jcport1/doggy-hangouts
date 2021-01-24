@@ -24,6 +24,7 @@ class RequestsController < ApplicationController
     def create
 
         @request = current_user.requests.build(request_params)
+        
          
 
         if @request.save
@@ -41,6 +42,7 @@ class RequestsController < ApplicationController
     def edit
 
         @request = Request.find_by_id(params[:id])
+       
 
     end
 

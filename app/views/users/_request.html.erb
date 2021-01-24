@@ -34,7 +34,7 @@
 <ul> 
 
 <% @user.requests.each do |r| %>
-    <li> To <%= recipient(r) %> - <%=link_to r.subject_line, user_request_path(r) %> - sent on: <%= r.created_at.strftime("%b %e, %l:%M %p") %> - Status: <%= request_status(r) %> </li>
+    <li> To <%= recipient(r) %> - <%=link_to r.subject_line, request_path(r) %> - sent on: <%= r.created_at.strftime("%b %e, %l:%M %p") %> - Status: <%= request_status(r) %> </li>
 
     <% end %>
 </ul> 
