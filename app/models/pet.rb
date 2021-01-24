@@ -7,6 +7,6 @@ class Pet < ApplicationRecord
     validates :name, :age, :size, :breed, presence: true 
 
     validates :size, inclusion: { in: %w(small medium large), message: "%{value} is not a valid size"}
-    validates :age, :in => ["puppy", "young adult", "adult", "senior"], message: "%{value} is not a valid age"
+    validates :age, inclusion:{ in: %w(puppy adolescent adult senior), message: "%{value} is not a valid age"}
     
 end

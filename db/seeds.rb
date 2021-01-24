@@ -22,11 +22,11 @@
     u8 =User.create(username: "laura1", email: "laura@laura.com", password: "123", name: "laura")
 
     p1 = Pet.create(name: "lulu", age: "puppy", breed: "pug", size: "small", user:u1)
-    p2 = Pet.create(name: "buddy", age: "young adult", breed: "beagle", size: "medium", user:u2)
+    p2 = Pet.create(name: "buddy", age: "adolescent", breed: "beagle", size: "medium", user:u2)
     p3 = Pet.create(name: "coco", age: "adult", breed: "chow chow", size: "large", user:u3)
     p4 = Pet.create(name: "baxter", age: "senior", breed: "pomeranian", size: "small", user:u4)
     p5 = Pet.create(name: "baobao", age: "puppy", breed: "shetland sheepdog", size: "medium", user:u5)
-    p6 = Pet.create(name: "balto", age: "young adult", breed: "labrador retriever", size: "large", user:u6)
+    p6 = Pet.create(name: "balto", age: "adolescent", breed: "labrador retriever", size: "large", user:u6)
     p7 = Pet.create(name: "togo", age: "adult", breed: "chihuahua", size: "small", user:u7)
     p8 = Pet.create(name: "champ", age: "senior", breed: "scottish terrier", size: "medium", user:u8)
 

@@ -43,6 +43,7 @@ class ListingsController < ApplicationController
 
     def show 
         @listing = Listing.find(params[:id])
+        
     end
 
     #add validations 
@@ -75,7 +76,7 @@ class ListingsController < ApplicationController
     
     #belongs to author, pet
     def listing_params 
-        params.require(:listing).permit(:title, :content, :pet_id, :location_id, location_attributes: [:name])
+        params.require(:listing).permit(:title, :content, :pet_id, :date_time, :location_id, location_attributes: [:name])
     end
 
     def authorized_to_edit?

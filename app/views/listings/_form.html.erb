@@ -13,6 +13,10 @@
     <%= f.select :pet_id, current_user.pets.collect { |p| [p.name, p.id] } %> 
     <br>
     <br> 
+    <%= f.label :date_time %>
+    <%= f.datetime_local_field :date_time %>
+    <br>
+    <br> 
     <h4> Choose a location:</h4>
 
     <div>

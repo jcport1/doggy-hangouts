@@ -7,6 +7,7 @@
     <br> 
     <br>
     <p>Location: <%= @listing.location.name %></p>
+    <p>Date/Time: <%= @listing.date_time.strftime("%b %e, %l:%M %p") %></p>
 
     <% if !authored_by_user?(@listing) %>
 
@@ -14,7 +15,7 @@
         <% else %> 
             <p> Author: self </p>
     <% end %> 
-    <p> Posted on: <%= @listing.created_at %></p>
+    <p> Posted on: <%= @listing.created_at.strftime("%b %e, %l:%M %p") %></p>
 
     <% if !self_request?(@listing) %> 
             <p><%= link_to "Click to Join the Fun", new_listing_request_path(@listing) %>
