@@ -38,6 +38,8 @@
     Listing.create(title: "Puppy Party", content: "lorem ipsum", author:u5, date_time: '2021-02-20 10:00:00 UTC', pet:p5, location:l3)
     Listing.create(title: "Agility Activity at Park", content: "lorem ipsum", date_time: '2021-02-21 10:00:00 UTC', author:u7, pet:p7, location:l1)
     Listing.create(title: "Small Dogs Get Together", content: "lorem ipsum", date_time: '2021-02-27 10:00:00 UTC', author:u8, pet:p8, location:l2)
+    Listing.create(title: "Bark Cove Jamboree", content: "lorem ipsum", date_time: '2021-02-08 10:00:00 UTC',  author:u4, pet:p4, location:l1)
+    Listing.create(title: "March Madness", content: "lorem ipsum", date_time: '2021-03-06 10:00:00 UTC',  author:u4, pet:p4, location:l3)
 
    
     # 10.times do 

@@ -10,13 +10,14 @@ class ListingsController < ApplicationController
             @error = "User not Found" if params[:user_id]
             @listings = Listing.all.order_by_date
         end
+        
 
     end
 
     def new
 
-        @listing = Listing.new
-        @listing.build_location 
+        @listing = Listing.new(location_id: params[:location_id])
+        # @listing.build_location 
 
     end
     
@@ -24,7 +25,7 @@ class ListingsController < ApplicationController
 
         @listing = Listing.create(listing_params)
         @listing.author_id = session[:user_id]
-        @listing.location_id = params[:listing][:location_id]
+        # @listing.location_id = params[:listing][:location_id]
 
         #pet id? 
 
@@ -61,7 +62,6 @@ class ListingsController < ApplicationController
         @listing.update(listing_params)
         authorized_to_edit? 
         redirect_to user_listings_path(current_user), notice: 'Listing was successfully updated.'
-       
         
     end
 
@@ -76,7 +76,7 @@ class ListingsController < ApplicationController
     
     #belongs to author, pet
     def listing_params 
-        params.require(:listing).permit(:title, :content, :pet_id, :date_time, :location_id, location_attributes: [:name])
+        params.require(:listing).permit(:title, :content, :pet_id, :date_time, :author_id, :location_id, location_attributes: [:name])
     end
 
     def authorized_to_edit?

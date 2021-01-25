@@ -19,7 +19,7 @@
   <nav class="navbar navbar-dark bg-dark">
 
   <a class="navbar-brand" href="/users/<%= current_user.id %>">My Profile</a>
-  <a class="navbar-brand" href="/listings">All Listings</a>
+  <a class="navbar-brand" href="/listings">Listings</a>
   <a class="navbar-brand" href="/users/<%= current_user.id%>/listings">My Listings</a>
   <a class="navbar-brand" href="/listings/new">Create New Listing</a>
   <a class="navbar-brand" href="/logout">Log Out</a>
@@ -40,8 +40,9 @@
   </div> 
 
   
-
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
 
   
   </body>

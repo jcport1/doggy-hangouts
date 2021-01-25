@@ -1,22 +1,28 @@
-<h3> My Upcoming Hosted Events </h3>
+<h3> Hosted Events </h3><br>
 
-<p> Event Details: </p> 
+
 
 <ul>
- <% @user.authored_listings.each do |e| %> 
-        <li>Location: <%= e.location.name %> | Date & Time: <%= e.date_time.strftime("%b %e, %l:%M %p") %></li>
+ <% @user.authored_listings.each do |e| %>
+        <li><h4><%= link_to e.title, listing_path(e) %></li></h4><br>
+        <ul>
+        <li>Location: <%= e.location.name %></li>
+        <li>Date & Time: <%= e.date_time.strftime("%b %e, %l:%M %p") %></li></br>
+        </ul>
     <% end %> 
     </ul> 
 
 
-<h3> Event Sign-ups </h3>
-
-    <p> Event Details: </p> 
+<h3> Paw Pal Attendee </h3><br>
 
     <ul> 
-    <% @user.events do |e| %>
+    <% @user.answered_listings.each do |e| %>
+        <li><h4><%= e.title %></h4></li><br>
+        <ul>
         <li>Location: <%= e.location.name %></li>
-        <li>Date & Time: <%= e.date_time %></li>
-        <li>Host: </li>
+        <li>Date & Time: <%= e.date_time.strftime("%b %e, %l:%M %p") %></li>
+        <li>Hosted by: <%= link_to e.author.name, user_path(e.author) %> </li><br>
+        </ul>
     <% end %>
     </ul>
+
