@@ -4,10 +4,10 @@
  
     <p> Who's joining you on this adventure? </p> 
 
-    <div>
+    
 
     <%= f.collection_check_boxes :pet_ids, current_user.pets, :id, :name %>
-    </div>
+    
 
     <p> Do you agree to follow social distancing guidelines and mask up? </p> 
         <%= f.label 'safety', 'Accept' %> 
@@ -24,5 +24,8 @@
     <br>
     <br>
     <%= f.hidden_field :listing_id %>
-   <%= f.submit %>
+
+    <div class="field form-group">
+   <%= f.submit 'Submit', class: 'btn btn-success' %>
+   </div>
    <% end %> 

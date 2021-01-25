@@ -1,10 +1,8 @@
 class SessionsController < ApplicationController
 
-    skip_before_action :login_required, :only => [:welcome, :new, :create]
+    skip_before_action :login_required, :only => [:welcome, :new, :create, :omniauth]
 
     def welcome
-
-
 
     end 
 
@@ -30,7 +28,6 @@ class SessionsController < ApplicationController
             flash[:error] = "Your login info was invalid"
             render :new
         end
-
 
     end 
 

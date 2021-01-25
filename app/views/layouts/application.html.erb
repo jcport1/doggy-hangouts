@@ -10,19 +10,23 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="container-fluid">
 
   <% if logged_in? %> 
 
-  <div>
+  <div class="container">
+  
+  <nav class="navbar navbar-dark bg-dark">
 
-    <%= link_to "My Profile", user_path(current_user) %> |
-    <%= link_to "All Listings", listings_path %> |
-    <%= link_to "My Listings", user_listings_path(current_user)%> |
-    <%= link_to "Create New Listing", new_listing_path %> |
-    <%= link_to "Log Out", logout_path %>
+  <a class="navbar-brand" href="/users/<%= current_user.id %>">My Profile</a>
+  <a class="navbar-brand" href="/listings">All Listings</a>
+  <a class="navbar-brand" href="/users/<%= current_user.id%>/listings">My Listings</a>
+  <a class="navbar-brand" href="/listings/new">Create New Listing</a>
+  <a class="navbar-brand" href="/logout">Log Out</a>
 
-  </div> 
+  </nav> 
+
+  </div>
 
   <% end %> 
 
@@ -35,6 +39,10 @@
   <%= @error %>
   </div> 
 
+  
+
     <%= yield %>
+
+  
   </body>
 </html>
