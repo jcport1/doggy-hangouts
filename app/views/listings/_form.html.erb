@@ -23,18 +23,17 @@
     </div>
     <br>
     <br> 
-    <h4> Choose a location:</h4>
+    <h4> Select a location:</h4>
 
-    <div>
-
+    <%= f.label :location_id %> 
     <%= f.collection_select :location_id, Location.all, :id, :name, include_blank: 'Select One' %>
-    </div> 
+    
     <br>
     <br>
 
     <p> Or create a new location:</p>
 
-    <%= f.fields_for :location, Location.new do |l_location| %> 
+    <%= f.fields_for :location do |l_location| %> 
         <%= l_location.label :name %>
         <%= l_location.text_field :name %>
         
