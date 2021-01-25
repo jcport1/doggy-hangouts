@@ -9,7 +9,7 @@
     <%= f.collection_check_boxes :pet_ids, current_user.pets, :id, :name %>
     
 
-    <p> Do you agree to follow social distancing guidelines and mask up? </p> 
+    <p> Do you agree to follow social distancing guidelines & mask up? </p> 
         <%= f.label 'safety', 'Accept' %> 
         <%= f.radio_button :safety, true %>
         <%= f.label 'safety', 'Decline' %> 

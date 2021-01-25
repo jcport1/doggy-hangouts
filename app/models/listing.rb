@@ -8,7 +8,7 @@ class Listing < ApplicationRecord
 
    
 
-    validates :title, :content, presence: true
+    validates :title, :content, :date_time, :location, presence: true
     scope :order_by_date, -> { order(created_at: :asc)} 
 
     def location_attributes=(attributes)

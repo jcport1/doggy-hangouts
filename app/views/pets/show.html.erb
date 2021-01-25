@@ -1,6 +1,8 @@
-<h1> Woof, Woof <%= @pet.name %> </h1> 
+<h1> Woof, Woof </h1>
 
-<img src="<%= (url_for(@pet.image)) %>">
+<h2> <%= @pet.name.titleize %>'s Profile </h1> 
+
+<img class="img-fluid" src="<%= (url_for(@pet.profile_pic))%>">
 
 <p>Age: <%= @pet.age %></p>
 <p>Breed: <%= @pet.breed %></p>

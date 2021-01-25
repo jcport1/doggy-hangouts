@@ -1,0 +1,10 @@
+<h1> Events By Location </h1> 
+
+
+<% @locations.each do |l| %><br>
+    <h2><%= l.name %></h2></p>
+        <% l.listings.each do |e| %>
+        <%= link_to e.title, listings_path(e) %> - Happening: <%= e.date_time.strftime("%b %e, %l:%M %p") %><br>
+        <%end %> 
+<% end %> 
+
