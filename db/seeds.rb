@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
     l1 = Location.create(name: "Back Cove Park")
     l2 = Location.create(name: "Eastern Prom Trail")
     l3 = Location.create(name: "Bug Light Park")
@@ -21,7 +22,7 @@
     u7 = User.create(username: "james1", email: "james@james.com", password: "123", name: "james")
     u8 =User.create(username: "laura1", email: "laura@laura.com", password: "123", name: "laura")
 
-    p1 = Pet.create(name: "lulu", age: "puppy", breed: "pug", size: "small", user:u1)
+    p1 = Pet.create(name: "lulu", age: "puppy", breed: "pug", size: "small", user:u1).image.attach(io: File.open('app/assets/images/seed_images/dogs/dog_1.jpg'), filename: 'dog_1.jpg')
     p2 = Pet.create(name: "buddy", age: "adolescent", breed: "beagle", size: "medium", user:u2)
     p3 = Pet.create(name: "coco", age: "adult", breed: "chow chow", size: "large", user:u3)
     p4 = Pet.create(name: "baxter", age: "senior", breed: "pomeranian", size: "small", user:u4)
