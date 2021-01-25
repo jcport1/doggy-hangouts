@@ -13,10 +13,6 @@
     </div>
     <br>
     <br> 
-    <%= f.label :pet_id %>
-    <%= f.select :pet_id, current_user.pets.collect { |p| [p.name, p.id] } %> 
-    <br>
-    <br> 
     <div class="field form-group">
     <%= f.label :date_time %>
     <%= f.datetime_local_field :date_time, class: 'form-control' %>
@@ -27,21 +23,15 @@
 
     <%= f.label :location_id %> 
     <%= f.collection_select :location_id, Location.all, :id, :name, include_blank: 'Select One' %>
-    
     <br>
     <br>
-
     <p> Or create a new location:</p>
-
     <%= f.fields_for :location do |l_location| %> 
         <%= l_location.label :name %>
-        <%= l_location.text_field :name %>
-        
+        <%= l_location.text_field :name %> 
         <% end %> 
-
     <br>
     <br>
-    <%= f.hidden_field :location_id %>
     <div class="field form-group">
     <%= f.submit class: 'btn btn-success' %>
     </div>

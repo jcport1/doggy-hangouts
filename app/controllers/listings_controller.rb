@@ -27,13 +27,8 @@ class ListingsController < ApplicationController
         @listing.author_id = session[:user_id]
         
         # @listing.location_id = params[:listing][:location_id]
-        
-
             if @listing.save
-                #redirect to a homepage or dashboard
-
                 redirect_to listings_path, notice: 'Listing was successfuly created.'
-
             else 
                 @listing.build_location 
                 render :new 
@@ -73,9 +68,8 @@ class ListingsController < ApplicationController
 
     private
     
-    #belongs to author, pet
     def listing_params 
-        params.require(:listing).permit(:title, :content, :date_time, :location_id, :pet_id, location_attributes: [:name])
+        params.require(:listing).permit(:title, :content, :date_time, :location_id, location_attributes: [:name])
     end
 
     def authorized_to_edit?

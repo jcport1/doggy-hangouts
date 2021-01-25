@@ -1,7 +1,6 @@
 class Listing < ApplicationRecord
 
     belongs_to :author, class_name: "User"
-    belongs_to :pet
     belongs_to :location
     # accepts_nested_attributes_for :location 
     has_many :events
