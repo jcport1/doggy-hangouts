@@ -1,18 +1,27 @@
-<div class="jumbotron"> <h1> Welcome to Doggy Hangouts! </h1></div>
+<%= image_tag("logo.png", size: "600x300", class: "image-fluid") %> 
 
+
+<div class="jumbotron"> 
+<h1>Welcome to Paw Pals!</h1>
+</div>
 
 <% if !logged_in? %>
 
-    <%= link_to "Sign Up", signup_path %>
+    <a href="/signup" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Sign up</a>
     <br>
     <br>
-    <%= link_to "Login", login_path %> 
+    <a href="/login" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Login</a>
     <br>
     <br>
     <%= button_to "Log in with Google", "/auth/google_oauth2"%>
 
+
 <% else %>
 
-<h1> Woof, woof!</h1>
+<div class="container">
+
+<h2> Woof, woof!</h2>
+
+</div>
 
 <% end %> 

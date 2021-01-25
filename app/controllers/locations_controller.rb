@@ -7,22 +7,22 @@ class LocationsController < ApplicationController
 
     end
 
-    # def new
+    def new
 
-    #     @location = Location.new 
+        @location = Location.new 
 
-    # end
+    end
 
-    # def create
+    def create
         
-    #     @location = Location.create(location_params)
+        @location = Location.create(location_params)
 
-    # end
+    end
 
-    # private
+    private
 
-    # def location_params
-    #     params.require(:location).permit(:name)
-    # end
+    def location_params
+        params.require(:location).permit(:name)
+    end
 
 end

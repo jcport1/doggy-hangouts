@@ -10,7 +10,6 @@
     l1 = Location.create(name: "Back Cove Park")
     l2 = Location.create(name: "Eastern Prom Trail")
     l3 = Location.create(name: "Bug Light Park")
-    
 
 
     u1 = User.create(username: "billy1", email: "billy@billy.com", password: "123", name: "billy")
