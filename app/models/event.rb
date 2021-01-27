@@ -10,6 +10,7 @@ class Event < ApplicationRecord
     validates :safety, inclusion: { in: [ true ], message: "guidelines must be followed to attend" }
     validates :vaccinations, inclusion: { in: [ true ], message: "must be up-to-date" }
     
+    
     # validate :self_event_denied
 
     # def self_event_denied
