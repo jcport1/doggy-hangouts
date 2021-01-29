@@ -5,10 +5,10 @@ class ListingsController < ApplicationController
     def index
 
         if params[:user_id] && @user = User.find_by_id(params[:user_id])
-            @listings = @user.authored_listings.order_by_date 
+            @listings = @user.authored_listings.order_by_post_date 
         else 
             @error = "User not Found" if params[:user_id]
-            @listings = Listing.all.order_by_date
+            @listings = Listing.all.order_by_post_date
         end
         
 

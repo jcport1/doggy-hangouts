@@ -9,6 +9,7 @@ class Event < ApplicationRecord
     validates :listing, uniqueness: { scope: :user, message: "You already joined this event"}
     validates :safety, inclusion: { in: [ true ], message: "guidelines must be followed to attend" }
     validates :vaccinations, inclusion: { in: [ true ], message: "must be up-to-date" }
+    scope :order_by_event_date, -> { order(date_time: :desc)} 
     
     
     # validate :self_event_denied

@@ -17,5 +17,7 @@ module ListingsHelper
         listing.author == current_user 
 
     end
+
+   
    
 end

@@ -5,11 +5,13 @@ class Listing < ApplicationRecord
     # accepts_nested_attributes_for :location 
     has_many :events
     has_many :user_requestors, through: :events, source: :user_id
+    
 
    
 
     validates :title, :content, :date_time, :location, presence: true
-    scope :order_by_date, -> { order(created_at: :desc)} 
+    scope :order_by_post_date, -> { order(created_at: :desc)} 
+    
 
     def location_attributes=(attributes)
 
