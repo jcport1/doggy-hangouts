@@ -32,17 +32,18 @@
   <% end %> 
 
   <% if flash[:notice] %> 
-
+  <div class="container">
   <div class="alert alert-success" role="alert"> 
     <%= flash[:notice] %>
+    </div>
     </div>
     <% end %> 
 
     <% if flash[:error] %> 
-
+  <div class="container">
   <div class="alert alert-danger" role="alert"> 
     <%= flash[:error] %>
-  </div> 
+  </div></div> 
 
   <% end %> 
 
