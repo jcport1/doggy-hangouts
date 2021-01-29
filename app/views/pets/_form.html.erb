@@ -27,6 +27,15 @@
     <br>
     <br>
     <div class="field form-group">
+    <p>Gender</p>
+    <%= f.label 'gender', 'Female' %>
+    <%= f.radio_button :gender, 'Female' %> 
+    <%= f.label 'gender', 'Male' %>
+    <%= f.radio_button :gender, 'Male' %> 
+    </div> 
+    <br>
+    <br>
+    <div class="field form-group">
     <%= f.label :size %>
     <%= f.select :size, ["small","medium","large"], class: 'form-control' %>
     </div>

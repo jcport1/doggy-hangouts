@@ -59,7 +59,7 @@ class PetsController < ApplicationController
     #belongs to owner 
 
     def pet_params 
-        params.require(:pet).permit(:name, :age, :size, :breed, :profile_pic)
+        params.require(:pet).permit(:name, :age, :size, :breed, :profile_pic, :gender)
     end
 
     def authorized_to_edit?

@@ -2,11 +2,16 @@
 
 <h2> <%= @pet.name.titleize %>'s Profile </h1> 
 
-<img class="img-fluid" src="<%= (url_for(@pet.profile_pic))%>">
+<% if @pet.profile_pic.attached? %>
 
-<p>Age: <%= @pet.age %></p>
-<p>Breed: <%= @pet.breed %></p>
-<p> Size: <%= @pet.size %></p> 
+    <img class="img-fluid" src="<%= (url_for(@pet.profile_pic))%>">
+
+<% end %> 
+
+<p><strong>Age:</strong> <%= @pet.age %></p>
+<p><strong>Gender:</strong> <%= @pet.gender %></p>
+<p><strong>Breed:</strong> <%= @pet.breed %></p>
+<p><strong>Size:</strong> <%= @pet.size %></p> 
 
 
 <% if authorized_to_edit_pet?(@pet)%>
