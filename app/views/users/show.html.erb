@@ -1,13 +1,15 @@
 
-<h1><%= @user.username %>'s Profile </h1>
-
-<h4>Pet(s):</h4> 
+<div class="container p-3 my-3 bg-primary text-white"><h1><%= @user.username %>'s Profile </h1></div>
+<br>
+<h4>Pets:</h4> 
 <ul> 
 <% @user.pets.each do |p| %>
      <li><%= link_to p.name, pet_path(p) %></li>
      <% end %>
  </ul>
+ <% if @user.id == current_user.id %> 
  <%= link_to "Add a Pet", new_pet_path, class:"btn btn-info mb-3" %> 
+ <% end %> 
 
  <%= render 'event' %> 
 
