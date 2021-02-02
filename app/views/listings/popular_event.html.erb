@@ -1,0 +1,12 @@
+<h1> Popular Events Organized by number of RSVPs </h1>
+<br>
+<br>
+<% @listings.each do |l| %>
+   <ul>
+   <li> <%= l.title %> - Num. of RSVPS: <%= l.events.count %></li> 
+   </ul>
+    <% end %> 
+  
+
+    
+

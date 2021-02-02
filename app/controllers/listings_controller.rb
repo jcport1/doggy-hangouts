@@ -10,7 +10,6 @@ class ListingsController < ApplicationController
             @error = "User not Found" if params[:user_id]
             @listings = Listing.all.order_by_post_date
         end
-        
 
     end
 
@@ -27,16 +26,16 @@ class ListingsController < ApplicationController
         @listing.author_id = session[:user_id]
         
         # @listing.location_id = params[:listing][:location_id]
-            if @listing.save
+        if @listing.save
                 redirect_to listings_path, notice: 'Listing was successfuly created.'
             else 
                 @listing.build_location 
                 render :new 
-            end
-
+        end
     end
 
     def show 
+
         @listing = Listing.find(params[:id])
         
     end
@@ -66,10 +65,18 @@ class ListingsController < ApplicationController
         
     end
 
+    def popular_event 
+
+        @listings = Listing.event_with_most_rsvps
+        
+    end
+
     private
     
     def listing_params 
+
         params.require(:listing).permit(:title, :content, :date_time, :location_id, location_attributes: [:name])
+        
     end
 
     def authorized_to_edit?
@@ -79,7 +86,6 @@ class ListingsController < ApplicationController
     end
 
     #dry method
-
     # def set_listing
     #     @listing = Listing.find_by(params[:id])
     #     redirect_to listings_path if !@listing

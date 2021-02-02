@@ -21,15 +21,15 @@
     u7 = User.create(username: "james1", email: "james@james.com", password: "123", name: "james")
     u8 =User.create(username: "laura1", email: "laura@laura.com", password: "123", name: "laura")
 
-    p1 = Pet.create(name: "lulu", age: "puppy", breed: "pug", size: "small", gender: "male", user:u1).profile_pic.attach(io: File.open('app/assets/images/seed_images/dogs/dog_1.jpg'), filename: 'dog_1.jpg')
-    p2 = Pet.create(name: "buddy", age: "adolescent", breed: "beagle", size: "medium", gender: "female", user:u2).profile_pic.attach(io: File.open('app/assets/images/seed_images/dogs/dog_2.jpg'), filename: 'dog_2.jpg')
-    p3 = Pet.create(name: "coco", age: "adult", breed: "chow chow", size: "large", gender: "male", user:u3).profile_pic.attach(io: File.open('app/assets/images/seed_images/dogs/dog_3.jpg'), filename: 'dog_3.jpg')
-    p4 = Pet.create(name: "baxter", age: "senior", breed: "pomeranian", size: "small", gender: "female", user:u4).profile_pic.attach(io: File.open('app/assets/images/seed_images/dogs/dog_4.jpg'), filename: 'dog_4.jpg')
-    p5 = Pet.create(name: "baobao", age: "puppy", breed: "shetland sheepdog", size: "medium", gender: "male", user:u5).profile_pic.attach(io: File.open('app/assets/images/seed_images/dogs/dog_5.jpg'), filename: 'dog_5.jpg')
-    p6 = Pet.create(name: "balto", age: "adolescent", breed: "labrador retriever", size: "large", gender: "female", user:u6).profile_pic.attach(io: File.open('app/assets/images/seed_images/dogs/dog_6.jpg'), filename: 'dog_6.jpg')
-    p7 = Pet.create(name: "togo", age: "adult", breed: "chihuahua", size: "small", gender: "male", user:u7).profile_pic.attach(io: File.open('app/assets/images/seed_images/dogs/dog_7.jpg'), filename: 'dog_7.jpg')
-    p8 = Pet.create(name: "champ", age: "senior", breed: "scottish terrier", size: "medium", gender: "female", user:u8).profile_pic.attach(io: File.open('app/assets/images/seed_images/dogs/dog_8.jpg'), filename: 'dog_8.jpg')
-    p9 = Pet.create(name: "bubs", age: "puppy", breed: "corgie", size: "small", gender: "male", user:u1).profile_pic.attach(io: File.open('app/assets/images/seed_images/dogs/dog_9.jpg'), filename: 'dog_9.jpg')
+    p1 = Pet.create(name: "lulu", age: "puppy", breed: "pug", size: "small", gender: "Male", user:u1).profile_pic.attach(io: File.open('app/assets/images/seed_images/dogs/dog_1.jpg'), filename: 'dog_1.jpg')
+    p2 = Pet.create(name: "buddy", age: "adolescent", breed: "beagle", size: "medium", gender: "Female", user:u2).profile_pic.attach(io: File.open('app/assets/images/seed_images/dogs/dog_2.jpg'), filename: 'dog_2.jpg')
+    p3 = Pet.create(name: "coco", age: "adult", breed: "chow chow", size: "large", gender: "Male", user:u3).profile_pic.attach(io: File.open('app/assets/images/seed_images/dogs/dog_3.jpg'), filename: 'dog_3.jpg')
+    p4 = Pet.create(name: "baxter", age: "senior", breed: "pomeranian", size: "small", gender: "Female", user:u4).profile_pic.attach(io: File.open('app/assets/images/seed_images/dogs/dog_4.jpg'), filename: 'dog_4.jpg')
+    p5 = Pet.create(name: "baobao", age: "puppy", breed: "shetland sheepdog", size: "medium", gender: "Male", user:u5).profile_pic.attach(io: File.open('app/assets/images/seed_images/dogs/dog_5.jpg'), filename: 'dog_5.jpg')
+    p6 = Pet.create(name: "balto", age: "adolescent", breed: "labrador retriever", size: "large", gender: "Female", user:u6).profile_pic.attach(io: File.open('app/assets/images/seed_images/dogs/dog_6.jpg'), filename: 'dog_6.jpg')
+    p7 = Pet.create(name: "togo", age: "adult", breed: "chihuahua", size: "small", gender: "Male", user:u7).profile_pic.attach(io: File.open('app/assets/images/seed_images/dogs/dog_7.jpg'), filename: 'dog_7.jpg')
+    p8 = Pet.create(name: "champ", age: "senior", breed: "scottish terrier", size: "medium", gender: "Female", user:u8).profile_pic.attach(io: File.open('app/assets/images/seed_images/dogs/dog_8.jpg'), filename: 'dog_8.jpg')
+    p9 = Pet.create(name: "bubs", age: "puppy", breed: "corgie", size: "small", gender: "Male", user:u1).profile_pic.attach(io: File.open('app/assets/images/seed_images/dogs/dog_9.jpg'), filename: 'dog_9.jpg')
 
     Listing.create(title: "Dog Meet-up soon!", content: "lorem ipsum", date_time: '2021-02-06 10:00:00 UTC',  author:u1, location:l1)
     Listing.create(title: "Pups Chill Session", content: "lorem ipsum", date_time: '2021-02-07 10:00:00 UTC', author:u2, location:l2)
@@ -41,32 +41,8 @@
     Listing.create(title: "Bark Cove Jamboree", content: "lorem ipsum", date_time: '2021-02-08 10:00:00 UTC', author:u4, location:l1)
     Listing.create(title: "March Madness", content: "lorem ipsum", date_time: '2021-03-06 10:00:00 UTC', author:u4, location:l3)
 
-   
-    # 10.times do 
 
-    #     User.create(username: Faker::Internet.username, email: Faker::Internet.email, password:"password", name: Faker::Name.name )
-        
-    # end
-
-    # users = User.all 
-
-    # 10.times do 
-
-    #     Pet.create(name: Faker::Creature::Dog.name, age: Faker::Number.between(from: 1, to: 18), size: "Medium", user: users[rand(0..9)])
-
-    # end 
-        
-
-
-    # 20.times do
-
-    #      Listing.create(title: Faker::Book.title, content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", author: users[rand(0..9)], pet: pets[rand(0..9)])
-        
-
-    # end 
-
-
-# puts("Seeded!")
+puts("Seeded!")
 
 # Request.create(message: date: pet_id: listing_id:)
 

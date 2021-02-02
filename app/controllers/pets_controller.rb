@@ -3,15 +3,13 @@ class PetsController < ApplicationController
     def index
 
         @pets = Pet.all 
-        
-
+    
     end
     
     def new
 
         @pet = Pet.new 
        
-
     end
     
     def create 
@@ -20,7 +18,7 @@ class PetsController < ApplicationController
         @pet.user_id = session[:user_id]
 
         if @pet.save
-            redirect_to user_path(current_user)
+                redirect_to user_path(current_user)
         else
             render :new
         end
@@ -28,11 +26,12 @@ class PetsController < ApplicationController
 
     def show
 
-        @pet = Pet.find(params[:id])
-        
+        @pet = Pet.find(params[:id])  
+
     end
 
     def edit 
+
         @pet = Pet.find(params[:id])
         authorized_to_edit?
     
@@ -57,7 +56,6 @@ class PetsController < ApplicationController
     private
 
     #belongs to owner 
-
     def pet_params 
         params.require(:pet).permit(:name, :age, :size, :breed, :profile_pic, :gender)
     end

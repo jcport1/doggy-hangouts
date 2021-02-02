@@ -1,10 +1,9 @@
 class Pet < ApplicationRecord
 
     belongs_to :user
+    has_one_attached :profile_pic
     has_many :event_pets 
     has_many :events, through: :event_pets 
-    has_one_attached :profile_pic
-    
     # has_many :requests
     # has_many :listings 
     validates :name, :age, :size, :breed, :gender, presence: true 

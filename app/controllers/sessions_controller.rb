@@ -8,7 +8,6 @@ class SessionsController < ApplicationController
 
     def new
 
-
     end 
 
     #logs in User 
@@ -16,11 +15,9 @@ class SessionsController < ApplicationController
     def create 
 
         #find the user with params from form
-
         @user = User.find_by(username: params[:user][:username])
 
         #if user and password valid log them in 
-
         if @user && @user.authenticate(params[:user][:password])
             session[:user_id] = @user.id
             redirect_to listings_path, :notice => "Welcome back, #{@user.name}!"
@@ -35,7 +32,7 @@ class SessionsController < ApplicationController
 
         session.delete(:user_id)
         redirect_to '/', notice: "See you soon - woof! "
-
+        
     end 
 
     def omniauth
